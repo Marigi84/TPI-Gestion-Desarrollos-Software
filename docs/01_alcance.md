@@ -85,7 +85,7 @@ modo lectura con el sistema de alumnos existente.
 1. **Documento de especificación de requerimientos** (RF, RNF, historias de usuario, caso de uso y criterios de aceptación).
 2. **Plan de pruebas y reporte de defectos** con la matriz de trazabilidad requisito ↔ prueba.
 
-## 1.6 ¿Por qué una buena gestión del alcance evita el scope creep? (10 líneas)
+## 1.6 ¿Por qué una buena gestión del alcance evita el scope creep? 
 
 El scope creep es la incorporación silenciosa de cambios que nadie estimó ni aprobó. Un alcance bien
 definido pone por escrito, antes de empezar, qué entra y qué no entra, de modo que cualquier pedido nuevo
