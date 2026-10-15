@@ -1,10 +1,15 @@
 # 1. Alcance del proyecto – SGCA (Sistema de Gestión de Certificados Académicos)
 
 **Proyecto:** Módulo web de solicitud y descarga de certificados académicos
+
 **Cliente:** Universidad (Secretaría Académica)
+
 **Plazo:** 6 semanas simuladas — 02/11/2026 a 11/12/2026
+
 **Equipo:** 2 desarrolladores, 1 tester, 1 diseñador UX
+
 **Presupuesto base:** USD 18.000
+
 **Tecnología obligatoria:** backend Node.js, frontend React, base de datos PostgreSQL
 
 ---
