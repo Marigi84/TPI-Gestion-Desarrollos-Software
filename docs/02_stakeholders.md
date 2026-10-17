@@ -36,6 +36,11 @@ apartados de requerimientos, riesgos y planificación.
 
 ## 2.3 Matriz de influencia e interés
 
+![Matriz de influencia e interés de los stakeholders](img/matriz_influencia_interes.png)
+
+<details>
+<summary>Código Mermaid del diagrama</summary>
+
 ```mermaid
 quadrantChart
     title Matriz de influencia e interés
@@ -44,19 +49,21 @@ quadrantChart
     quadrant-1 Gestionar de cerca
     quadrant-2 Mantener satisfecho
     quadrant-3 Monitorear
-    quadrant-4 Mantener informado e involucrar
+    quadrant-4 Mantener informado
     S01: [0.90, 0.92]
     S02: [0.35, 0.90]
     S03: [0.75, 0.82]
     S06: [0.95, 0.70]
-    S07: [0.80, 0.48]
-    S08: [0.75, 0.40]
-    S09: [0.70, 0.32]
-    S05: [0.88, 0.36]
-    S10: [0.95, 0.45]
-    S04: [0.55, 0.42]
+    S07: [0.80, 0.40]
+    S08: [0.70, 0.30]
+    S09: [0.62, 0.22]
+    S05: [0.88, 0.28]
+    S10: [0.94, 0.40]
+    S04: [0.55, 0.38]
     S11: [0.15, 0.40]
 ```
+
+</details>
 
 ## 2.4 Acciones para mantener alineados a los interesados
 
