@@ -47,7 +47,7 @@ documentación y el UAT no son requerimientos del producto y aparecen en el cron
 | RD-01 | Un alumno con deuda administrativa no puede obtener ningún certificado. | S01, S04 |
 | RD-02 | El certificado analítico parcial muestra las calificaciones en escala de 1 a 10. | Consigna del caso |
 | RD-03 | El certificado analítico parcial excluye las materias extracurriculares. | Consigna del caso |
-| RD-04 | Solo los alumnos con condición de regular vigente pueden solicitar certificados. | S01 (a confirmar) |
+| RD-04 | Solo los alumnos con condición de regular vigente pueden solicitar certificados. | Alcance (objetivo general) |
 
 ### 3.2.2 Requerimientos funcionales (RF)
 
@@ -60,8 +60,6 @@ documentación y el UAT no son requerimientos del producto y aparecen en el cron
 | RF-05 | **Notificar por correo.** Una vez emitido el certificado, el sistema envía al alumno un correo con el link de descarga. | S01, S10 | Notificación por correo | — |
 | RF-06 | **Registrar la solicitud.** Toda solicitud se guarda en PostgreSQL con el alumno, el tipo de certificado, su estado (en proceso, emitida, rechazada o con error), el estado de la notificación por correo (enviada o fallida) y la fecha. La fecha de emisión se completa cuando el PDF se genera. | S01, S02 | Registro en PostgreSQL | — |
 | RF-07 | **Consultar datos académicos en modo lectura.** El sistema obtiene del sistema de alumnos los datos personales, la condición de regular, las deudas y las materias aprobadas con sus notas, sin escribir nunca en él. | S03 | Integración en modo lectura | — |
-| RF-08 | **Consultar las solicitudes registradas.** El personal de Secretaría puede ver las solicitudes (alumno, tipo, estado y fecha). | S05, S01 | Registro en PostgreSQL | — |
-| RF-09 | **Reenviar el correo de notificación** a pedido del alumno. | S10 | Notificación por correo | — |
 
 ### 3.2.3 Requerimientos no funcionales (RNF)
 
@@ -76,6 +74,8 @@ documentación y el UAT no son requerimientos del producto y aparecen en el cron
 
 Criterios: **Must** si el módulo no puede entregarse ni firmarse sin el requerimiento. **Should** si es importante pero hay
 una alternativa. **Could** si es deseable y solo entra si sobra tiempo. **Won't** si queda fuera de esta entrega.
+Todos los RF salen de las inclusiones del alcance y por eso son Must. Las ideas que surgieron fuera del alcance quedan
+como Won't para no generar *scope creep*.
 
 | Categoría | Requerimiento | Justificación | Si no entra |
 |---|---|---|---|
@@ -86,17 +86,17 @@ una alternativa. **Could** si es deseable y solo entra si sobra tiempo. **Won't*
 | **Must** | RF-05 Notificar por correo | Lo exige la consigna y forma parte del objetivo general. | Incumple el caso; el alumno igual descarga desde el portal. |
 | **Must** | RF-06 Registrar la solicitud | Objetivo específico 3 (100 % registrado) y trazabilidad auditable. | Sin auditoría, no se puede firmar. |
 | **Must** | RF-07 Consultar datos en lectura | Sin los datos del alumno no se puede validar ni generar nada. | Nada de lo anterior funciona. |
-| **Should** | RF-08 Consultar solicitudes registradas | Secretaría necesita ver las solicitudes, pero técnicamente se podría consultar la base directamente. | Se consulta la base de datos directo. |
-| **Could** | RF-09 Reenviar el correo | Mejora la experiencia, pero el alumno puede descargar desde el portal. | El alumno descarga desde el portal. |
 | **Won't** | Otros tipos de certificado (matrícula, titulación, constancia de cursos) | Excluido en el alcance (1.4). | Se trata como solicitud de cambio. |
 | **Won't** | Firma digital avanzada, otros idiomas o apostilla | Excluido en el alcance (1.4). | Se trata como solicitud de cambio. |
 | **Won't** | Pago en línea de deudas | Excluido en el alcance (1.4). El alumno regulariza su deuda por los canales actuales. | Se trata como solicitud de cambio. |
+| **Won't** | Pantalla para que Secretaría consulte las solicitudes | No está en las inclusiones del alcance (1.3). Los registros quedan en la base de datos para auditoría. | Se trata como solicitud de cambio. |
+| **Won't** | Reenvío del correo a pedido del alumno | No está en las inclusiones del alcance (1.3). El alumno puede descargar desde el portal. | Se trata como solicitud de cambio. |
 
-Los requerimientos **Should** y **Could** son los primeros en postergarse si hay un desvío de plazo. Los **Must** no se negocian.
+Los **Must** no se negocian: si hay un desvío de plazo, se ajusta el plan, no el alcance.
 
 ## 3.4 Historias de usuario
 
-Las historias parten de una versión inicial ambigua ("Como alumno quiero pedir un certificado") y se refinan hasta cumplir
+Las historias parten de una versión inicial ambigua (por ejemplo, "Como alumno quiero que me den el analítico para presentarlo en un trámite") y se refinan hasta cumplir
 INVEST. En cada una se eliminó la ambigüedad sobre el tipo de alumno, el tipo de certificado, el resultado esperado y
 el tiempo. La HU-02 y el CU-01 se refinaron con apoyo de IA, y el proceso completo (instrucción, salida y corrección
 humana) está documentado en el apartado 4.
@@ -202,7 +202,7 @@ Esquema del escenario: Nota fuera de la escala de 1 a 10
   Y que el sistema de alumnos informa una materia aprobada con nota <nota>
   Cuando solicito el certificado analítico parcial
   Entonces el sistema no genera el certificado
-  Y la solicitud queda registrada con error para que Secretaría la revise
+  Y la solicitud queda registrada con error para su revisión
 
   Ejemplos:
     | nota |
@@ -272,7 +272,7 @@ Escenario: Bloqueo por deuda administrativa
 | E1 | 6 | El alumno tiene deuda administrativa. | No emite el certificado, informa el motivo y registra la solicitud como "rechazada por deuda". Fin. |
 | E2 | 5 a 7 | El sistema de alumnos no está disponible. | Informa que no puede procesar la solicitud y que intente más tarde. Registra la solicitud con "error". Fin. |
 | E3 | 7 | El alumno no tiene materias aprobadas. | Informa que no hay materias para incluir. Registra la solicitud como "rechazada". Fin. |
-| E4 | 8 | Una nota está fuera de la escala de 1 a 10. | No emite el certificado y registra "error" para que Secretaría lo revise. Fin. |
+| E4 | 8 | Una nota está fuera de la escala de 1 a 10. | No emite el certificado y registra "error" para su revisión. Fin. |
 | E5 | 11 | Falla el envío del correo. | El certificado queda disponible en el portal y se avisa al alumno que no se pudo enviar el correo. Registra el fallo para reintentar el envío. El caso de uso continúa. |
 | E6 | 6 | El alumno no tiene condición de regular vigente. | No emite el certificado, informa el motivo y registra la solicitud como "rechazada". Fin. |
 | E7 | 9 | Falla la generación del PDF. | Informa que ocurrió un error y que intente más tarde. Registra la solicitud con "error". Fin. |
@@ -318,8 +318,6 @@ El diagrama de secuencia del CU-01 está en el apartado 4.
 | RF-05 | Notificación por correo | Cobertura funcional | S01, S10 | HU-01 (emisión y falla del correo), CU-01 E5 |
 | RF-06 | Registro en PostgreSQL | Auditoría y desempeño | S01, S02 | HU-01 (emisión y bloqueo), CU-01 pasos 4 y 10 y E8 |
 | RF-07 | Integración en modo lectura | Calidad de la integración | S03 | HU-01 (sistema no disponible), CU-01 E2 |
-| RF-08 | Registro en PostgreSQL | Auditoría y desempeño | S05, S01 | Pruebas funcionales |
-| RF-09 | Notificación por correo | Cobertura funcional | S10 | Pruebas funcionales |
 | RNF-01 | Generación del PDF | Auditoría y desempeño | S01 | Logs del piloto (09/12 al 11/12) |
 | RNF-02 | Integración en modo lectura | Calidad de la integración | S03 | Suite de pruebas (500 consultas) |
 | RNF-03 | Portal web · API | Cobertura funcional | S03, S01 | Prueba de acceso a certificados ajenos |
