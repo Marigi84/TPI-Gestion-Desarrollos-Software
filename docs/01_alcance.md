@@ -32,15 +32,21 @@ modo lectura con el sistema de alumnos existente.
 
 ## 1.2 Objetivos específicos (SMART)
 
-1. **Cobertura funcional:** Que el 100 % de las dos solicitudes soportadas (alumno regular y analítico
-   parcial) esté operativo en el ambiente de pruebas antes del **04/12/2026**, verificado por el tester con
+1. **Cobertura funcional:** Que el 100 % de los dos tipos de solicitud soportados (alumno regular y analítico parcial) esté operativo en el ambiente de pruebas antes del **04/12/2026**, verificado por el tester con
    las 20 pruebas del plan de pruebas.
 2. **Calidad de la integración:** Reducir a **menos del 1 %** las fallas de sincronización en 500 consultas
    de prueba contra el sistema de alumnos (modo lectura), medido con el reporte automatizado de la suite
    de pruebas, antes del **04/12/2026**.
-3. **Auditoría y desempeño:** Que el **100 %** de las solicitudes quede registrada en PostgreSQL con
-   usuario, tipo de certificado y fecha de emisión, y que el PDF se genere en **≤ 30 segundos**, medido
-   por logs en el piloto del **09/12/2026 al 11/12/2026**.
+3. **Auditoría:** Que el **100 %** de las solicitudes quede registrada en PostgreSQL con usuario,
+   tipo de certificado y fecha de emisión, medido por logs en el piloto del **09/12/2026 al 11/12/2026**.
+
+### Métricas de desempeño asociadas
+
+Algunos indicadores del proyecto se **monitorean** pero no se fijan como objetivos específicos, para no
+mezclar metas de entrega con metas de funcionamiento:
+
+- **Tiempo de generación del certificado en PDF:** ≤ 30 segundos, medido en los logs del piloto
+  (09/12/2026 al 11/12/2026). Se controla junto con los KPIs del apartado de Seguimiento y control.
 
 ## 1.3 Inclusiones (lo que el equipo se compromete a entregar)
 
@@ -48,7 +54,7 @@ modo lectura con el sistema de alumnos existente.
   parcial, **responsive en 2 tamaños definidos**: desktop (≥ 1024 px) y móvil (≤ 480 px).
 - API en Node.js con las operaciones: consultar elegibilidad, registrar solicitud, generar PDF, notificar por correo.
 - **Validación de deudas administrativas** previa a la emisión (si tiene deudas, bloquea y explica el motivo).
-- **Generación del certificado en PDF** con diseño institucional, respetando la escala 1–10 y excluyendo
+- **Generación del certificado en PDF** con diseño institucional, respetando la escala de calificaciones 1–10 y excluyendo
   materias extracurriculares en el analítico parcial.
 - **Notificación por correo electrónico** al alumno con link de descarga.
 - **Registro de la solicitud y la fecha de emisión** en PostgreSQL (trazabilidad auditable).
@@ -65,7 +71,7 @@ modo lectura con el sistema de alumnos existente.
 - Corrección de notas, promociones o historial académico por parte del SGCA.
 - Integraciones con otros sistemas no especificados (becas, biblioteca, tesis, pagos en línea).
 - Trámite presencial asistido por personal (la entrega es 100 % digital).
-- Mantenimiento evolutivo posterior a la entrega + 30 días de garantía por defectos.
+- Mantenimiento evolutivo posterior a la entrega (incluye 30 días de garantía por defectos).
 - Certificados en otros idiomas, apostillados o con firma digital avanzada.
 - Capacitación masiva a todo el alumnado (solo se entrega la Guía Rápida y una sesión de traspaso).
 
@@ -104,8 +110,8 @@ sobrecosto y fecha incumplida.
 
 | Elemento | Se conecta con |
 |---|---|
-| Objetivo general → objetivos específicos | Cada objetivo específico tiene métrica y fecha (ver documento 4: KPIs) |
-| Inclusiones → RF del documento de requerimientos | Cada inclusión debe tener al menos un RF o RNF |
+| Objetivo general → objetivos específicos | Cada objetivo específico tiene métrica y fecha (ver apartado de Seguimiento y control) |
+| Inclusiones → RF del apartado de Ingeniería de Requerimientos | Cada inclusión debe tener al menos un RF o RNF |
 | Exclusiones → matriz de riesgos | Un pedido de exclusión es un cambio, no una tarea del cronograma |
 | Entregables → hitos del cronograma | Externos en semanas 5 y 6; internos en semanas 1 y 4 |
-| Presupuesto USD 18.000 → documento 3 | El presupuesto aprobado es el techo del cálculo de costos |
+| Presupuesto USD 18.000 → apartado de Estimación de tiempos y costos | El presupuesto aprobado es el techo del cálculo de costos |
