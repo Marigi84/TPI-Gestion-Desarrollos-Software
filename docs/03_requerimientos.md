@@ -18,57 +18,52 @@ ejecutan en la semana 1.
 | 1 | **Entrevistas semiestructuradas** (4 de 45 min) | S01, S05, S04, S03 | Reglas de negocio: qué es una deuda, qué datos lleva cada certificado, cómo se accede al sistema de alumnos. | Pocas personas clave tienen el conocimiento y no está escrito. Permite repreguntar y detectar desacuerdos entre áreas. |
 | 2 | **Observación del trámite actual** (medio día) | S05 | Pasos reales de una solicitud manual, errores frecuentes y tareas que nadie menciona. | La gente omite lo que le parece obvio. Además fija la situación de partida para medir la mejora del objetivo general (≥ 95 % sin intervención manual). |
 | 3 | **Análisis de documentos** | Certificados actuales, reglamento académico, modelo de datos del sistema de alumnos | Reglas de dominio (escala 1–10, materias extracurriculares) y datos disponibles para la integración. | Son fuentes objetivas y no consumen tiempo de los interesados. |
-| 4 | **Encuesta breve** (hasta 8 preguntas cerradas) | S10 | Tipo de certificado más pedido, dispositivo que usan y qué esperan del trámite. | Los alumnos son muchos y no se puede entrevistar uno por uno. Los resultados respaldan la decisión sobre el diseño responsive (RNF-04). |
+| 4 | **Encuesta breve** (hasta 8 preguntas cerradas) | S10 | Tipo de certificado más pedido, dispositivo que usan y qué esperan del trámite. | Los alumnos son muchos y no se puede entrevistar uno por uno. Los resultados respaldan el diseño para desktop y móvil (RF-01). |
 | 5 | **Prototipo de baja fidelidad** | S09 con S10 y S01 | Validar el flujo de solicitud antes de programar. | Es más fácil reaccionar ante una pantalla dibujada que describir un requisito. En 6 semanas no hay margen para rehacer. |
 | 6 | **Taller de priorización** (1 reunión) | S01 con el equipo (S06, S07, S08) | Acordar qué es imprescindible y qué puede quedar afuera (MoSCoW, ver 3.3). | Quien decide las prioridades es Secretaría. Se logra el acuerdo en una sola reunión y queda registrado. |
 
 **Técnicas descartadas:** grupos focales con alumnos y talleres largos de modelado conjunto. Consumen más tiempo del
 disponible y el caso es de baja complejidad.
 
-**Uso de IA:** la IA se usa solo como asistente para refinar redacciones y detectar ambigüedades (ver apartado 4). No
-reemplaza ninguna de las técnicas anteriores y todo lo que produce lo revisa una persona.
+**Uso de IA:** la IA se usa solo como asistente para refinar redacciones y detectar ambigüedades (ver apartado de Uso de
+IA en Requerimientos). No reemplaza ninguna de las técnicas anteriores y todo lo que produce lo revisa una persona.
 
 ## 3.2 Clasificación y listado de requerimientos
 
 Se trabaja con tres tipos de requerimiento:
 
 - **RF – Requerimientos funcionales:** lo que el sistema hace.
-- **RNF – Requerimientos no funcionales:** cómo lo hace (rendimiento, seguridad, usabilidad, fiabilidad). Todos tienen un criterio medible.
+- **RNF – Requerimientos no funcionales:** cómo lo hace. Cada uno tiene un criterio medible.
 - **RD – Requerimientos de dominio:** reglas de la universidad que el sistema debe respetar sin importar la tecnología.
 
-El alcance se comprometió a que cada inclusión tenga al menos un RF o RNF. Por eso la lista cubre las siete inclusiones
-de producto (portal, API, validación de deudas, PDF, correo, registro e integración en lectura). Las pruebas, la
-documentación y el UAT no son requerimientos del producto y aparecen en el cronograma (apartado 7).
+Como pide la consigna, se listan **3 RF y 2 RNF**. Cada uno agrupa funciones relacionadas para que las siete inclusiones
+de producto del alcance (portal, API, validación de deudas, PDF, correo, registro e integración en lectura) tengan al
+menos un requerimiento. Las pruebas, la documentación y el UAT no son requerimientos del producto y aparecen en el
+apartado de Planificación.
 
 ### 3.2.1 Requerimientos de dominio (RD)
 
 | ID | Regla | Fuente |
 |---|---|---|
-| RD-01 | Un alumno con deuda administrativa no puede obtener ningún certificado. | S01, S04 |
+| RD-01 | Un alumno con deuda administrativa no puede obtener ningún certificado. | Consigna del caso |
 | RD-02 | El certificado analítico parcial muestra las calificaciones en escala de 1 a 10. | Consigna del caso |
 | RD-03 | El certificado analítico parcial excluye las materias extracurriculares. | Consigna del caso |
-| RD-04 | Solo los alumnos con condición de regular vigente pueden solicitar certificados. | Alcance (objetivo general) |
+| RD-04 | Solo los alumnos con condición de regular vigente pueden solicitar certificados. | **Supuesto a validar.** Surge del objetivo general del alcance; la consigna no lo define (pregunta abierta 13). |
 
 ### 3.2.2 Requerimientos funcionales (RF)
 
-| ID | Requerimiento | Fuente | Inclusión del alcance | Reglas |
+| ID | Requerimiento | Fuente | Inclusiones del alcance | Reglas |
 |---|---|---|---|---|
-| RF-01 | **Solicitar certificado.** El alumno autenticado elige el tipo de certificado (alumno regular o analítico parcial) y envía la solicitud desde el portal. | S01, S10 | Portal web, API | — |
-| RF-02 | **Validar elegibilidad.** Antes de emitir, el sistema verifica que el alumno sea regular y no tenga deudas administrativas. Si no cumple, bloquea la emisión y muestra el motivo. | S01, S04 | Validación de deudas | RD-01, RD-04 |
-| RF-03 | **Generar el certificado en PDF** con diseño institucional. En el analítico parcial incluye solo las materias aprobadas, con notas de 1 a 10 y sin materias extracurriculares. | S01 | Generación del PDF | RD-02, RD-03 |
-| RF-04 | **Descargar el certificado.** El alumno descarga el PDF emitido desde el portal o desde el link del correo. | S10 | Portal web | — |
-| RF-05 | **Notificar por correo.** Una vez emitido el certificado, el sistema envía al alumno un correo con el link de descarga. | S01, S10 | Notificación por correo | — |
-| RF-06 | **Registrar la solicitud.** Toda solicitud se guarda en PostgreSQL con el alumno, el tipo de certificado, su estado (en proceso, emitida, rechazada o con error), el estado de la notificación por correo (enviada o fallida) y la fecha. La fecha de emisión se completa cuando el PDF se genera. | S01, S02 | Registro en PostgreSQL | — |
-| RF-07 | **Consultar datos académicos en modo lectura.** El sistema obtiene del sistema de alumnos los datos personales, la condición de regular, las deudas y las materias aprobadas con sus notas, sin escribir nunca en él. | S03 | Integración en modo lectura | — |
+| RF-01 | **Solicitar y descargar el certificado.** El alumno autenticado elige el tipo de certificado (alumno regular o analítico parcial), envía la solicitud desde el portal y descarga el PDF desde el portal o desde el link del correo. Solo accede a sus propios certificados. El portal funciona en desktop (≥ 1024 px) y en móvil (≤ 480 px). | S01, S10 | Portal web, API | — |
+| RF-02 | **Validar la elegibilidad.** Antes de emitir, el sistema consulta en modo solo lectura en el sistema de alumnos la condición de regular y las deudas del alumno. Si no cumple, bloquea la emisión y explica el motivo. | S01, S03, S04 | Validación de deudas, integración en modo lectura | RD-01, RD-04 |
+| RF-03 | **Emitir el certificado.** El sistema genera el PDF con diseño institucional (en el analítico parcial, solo materias aprobadas, con notas de 1 a 10 y sin extracurriculares), registra la solicitud en PostgreSQL y envía al alumno un correo con el link de descarga. El registro guarda el alumno, el tipo de certificado, el estado (en proceso, emitida, rechazada o con error), el estado del correo (enviado o fallido) y la fecha; la fecha de emisión se completa al generar el PDF. | S01, S02 | Generación del PDF, notificación por correo, registro en PostgreSQL | RD-02, RD-03 |
 
 ### 3.2.3 Requerimientos no funcionales (RNF)
 
 | ID | Categoría | Requerimiento | Cómo se mide | Fuente |
 |---|---|---|---|---|
-| RNF-01 | Desempeño | El certificado en PDF se genera en **30 segundos o menos**. | Logs del piloto del 09/12 al 11/12/2026 (objetivo específico 3). | S01 |
-| RNF-02 | Fiabilidad de la integración | La integración es de solo lectura y falla en **menos del 1 %** de las consultas. | Reporte automatizado de la suite de pruebas con 500 consultas (objetivo específico 2). | S03 |
-| RNF-03 | Seguridad y privacidad | Solo el alumno autenticado puede solicitar y descargar **sus propios** certificados, y la comunicación va cifrada (HTTPS). | Prueba de acceso: intentar descargar el certificado de otro alumno debe fallar. | S03, S01 |
-| RNF-04 | Usabilidad y compatibilidad | El portal funciona en desktop (≥ 1024 px) y en móvil (≤ 480 px), y el alumno completa la solicitud en **3 pasos**: elegir, confirmar y descargar. | Pruebas funcionales en los dos tamaños. | S09, S10 |
+| RNF-01 | Desempeño | El certificado en PDF se genera en **30 segundos o menos**. | Logs del piloto del 09/12 al 11/12/2026 (métrica de desempeño asociada del alcance). | S01 |
+| RNF-02 | Fiabilidad de la integración | La integración nunca escribe en el sistema de alumnos y falla en **menos del 1 %** de las consultas. | Reporte automatizado de la suite de pruebas con 500 consultas (objetivo específico de calidad de la integración). | S03 |
 
 ## 3.3 Priorización con MoSCoW
 
@@ -79,27 +74,24 @@ como Won't para no generar *scope creep*.
 
 | Categoría | Requerimiento | Justificación | Si no entra |
 |---|---|---|---|
-| **Must** | RF-01 Solicitar certificado | Es el motivo del módulo. | No hay sistema. |
-| **Must** | RF-02 Validar elegibilidad | La consigna exige validar deudas y es la regla RD-01. | Se emitirían certificados a alumnos con deuda. |
-| **Must** | RF-03 Generar PDF | Es el producto que recibe el alumno. | No hay entregable. |
-| **Must** | RF-04 Descargar certificado | El alumno debe poder obtenerlo. | El certificado se genera pero no se puede usar. |
-| **Must** | RF-05 Notificar por correo | Lo exige la consigna y forma parte del objetivo general. | Incumple el caso; el alumno igual descarga desde el portal. |
-| **Must** | RF-06 Registrar la solicitud | Objetivo específico 3 (100 % registrado) y trazabilidad auditable. | Sin auditoría, no se puede firmar. |
-| **Must** | RF-07 Consultar datos en lectura | Sin los datos del alumno no se puede validar ni generar nada. | Nada de lo anterior funciona. |
+| **Must** | RF-01 Solicitar y descargar | Es el motivo del módulo. | El alumno no puede obtener el certificado. |
+| **Must** | RF-02 Validar la elegibilidad | La consigna exige validar deudas (RD-01) y la integración es la fuente de los datos. | Se emitirían certificados a alumnos con deuda. |
+| **Must** | RF-03 Emitir el certificado | Es el producto que recibe el alumno; el registro y el correo los exige la consigna. | No hay entregable ni auditoría. |
 | **Won't** | Otros tipos de certificado (matrícula, titulación, constancia de cursos) | Excluido en el alcance (1.4). | Se trata como solicitud de cambio. |
 | **Won't** | Firma digital avanzada, otros idiomas o apostilla | Excluido en el alcance (1.4). | Se trata como solicitud de cambio. |
 | **Won't** | Pago en línea de deudas | Excluido en el alcance (1.4). El alumno regulariza su deuda por los canales actuales. | Se trata como solicitud de cambio. |
 | **Won't** | Pantalla para que Secretaría consulte las solicitudes | No está en las inclusiones del alcance (1.3). Los registros quedan en la base de datos para auditoría. | Se trata como solicitud de cambio. |
 | **Won't** | Reenvío del correo a pedido del alumno | No está en las inclusiones del alcance (1.3). El alumno puede descargar desde el portal. | Se trata como solicitud de cambio. |
 
-Los **Must** no se negocian: si hay un desvío de plazo, se ajusta el plan, no el alcance.
+Cualquier cambio sobre un Must se evalúa con el proceso de gestión de cambios del alcance: se estima su impacto en tiempo
+y costo antes de aceptarlo.
 
 ## 3.4 Historias de usuario
 
-Las historias parten de una versión inicial ambigua (por ejemplo, "Como alumno quiero que me den el analítico para presentarlo en un trámite") y se refinan hasta cumplir
-INVEST. En cada una se eliminó la ambigüedad sobre el tipo de alumno, el tipo de certificado, el resultado esperado y
-el tiempo. La HU-02 y el CU-01 se refinaron con apoyo de IA, y el proceso completo (instrucción, salida y corrección
-humana) está documentado en el apartado 4.
+Las historias parten de una versión inicial ambigua (por ejemplo, "Como alumno quiero que me den el analítico para
+presentarlo en un trámite") y se refinan hasta cumplir INVEST. En cada una se eliminó la ambigüedad sobre el tipo de
+alumno, el tipo de certificado, el resultado esperado y el tiempo. La HU-02 y el CU-01 se refinaron con apoyo de IA, y el
+proceso completo (instrucción, salida y corrección humana) está en el apartado de Uso de IA en Requerimientos.
 
 ### HU-01 – Solicitar certificado de alumno regular
 
@@ -107,7 +99,7 @@ humana) está documentado en el apartado 4.
 > **quiero** solicitar mi certificado de alumno regular desde el portal,
 > **para** descargarlo en PDF sin tener que ir a Secretaría.
 
-**Requerimientos:** RF-01, RF-02, RF-03, RF-04, RF-05, RF-06, RF-07 · **Prioridad:** Must
+**Requerimientos:** RF-01, RF-02, RF-03 · **Reglas:** RD-01, RD-04 · **Prioridad:** Must
 
 **Verificación INVEST**
 
@@ -116,8 +108,8 @@ humana) está documentado en el apartado 4.
 | **I**ndependiente | Sí | Se puede desarrollar y probar sin depender de la HU-02. |
 | **N**egociable | Sí | El diseño del PDF y el texto del correo se pueden ajustar con Secretaría sin cambiar el objetivo. |
 | **V**aliosa | Sí | El alumno obtiene su certificado sin trámite presencial. |
-| **E**stimable | Sí | Alcance, reglas y datos están definidos (RF-01 a RF-07). |
-| **P**equeña | Sí | Se completa dentro de una semana de trabajo del equipo. |
+| **E**stimable | Sí | Alcance, reglas y datos están definidos (RF-01 a RF-03). |
+| **P**equeña | Sí | Cubre un solo tipo de certificado con un flujo acotado: solicitar, validar, emitir y descargar. |
 | **T**esteable | Sí | Cada criterio de aceptación es verificable con una prueba. |
 
 **Criterios de aceptación (BDD)**
@@ -160,7 +152,7 @@ Escenario: Falla el envío del correo
 > **quiero** solicitar desde el portal mi certificado analítico parcial y descargarlo en PDF,
 > **para** acreditar mis materias aprobadas y sus notas ante un tercero sin depender de una emisión manual de Secretaría Académica.
 
-**Requerimientos:** RF-01, RF-02, RF-03, RF-04, RF-06, RF-07 · **Reglas:** RD-01, RD-02, RD-03, RD-04 · **Prioridad:** Must
+**Requerimientos:** RF-01, RF-02, RF-03 · **Reglas:** RD-01, RD-02, RD-03, RD-04 · **Prioridad:** Must
 
 **Verificación INVEST**
 
@@ -170,7 +162,7 @@ Escenario: Falla el envío del correo
 | **N**egociable | Sí | El orden y el formato de las materias en el PDF se pueden ajustar con Secretaría. |
 | **V**aliosa | Sí | Elimina la emisión manual de Secretaría y le da al alumno el documento en el momento. |
 | **E**stimable | Sí | Las reglas RD-01 a RD-04 están definidas y los datos vienen del sistema de alumnos. La estimación depende de las preguntas abiertas 1, 3 y 10 (fuente de la deuda, modelo del PDF y cómo se reconoce una materia extracurricular). |
-| **P**equeña | Sí | Se completa dentro de una semana de trabajo del equipo. Si la estimación supera una semana, se divide en (a) validaciones y registro y (b) generación del PDF y correo. |
+| **P**equeña | Sí | Cubre un solo tipo de certificado y agrega solo dos reglas (RD-02 y RD-03) al flujo de la HU-01. Si al estimar resulta grande, se divide en (a) validaciones y registro y (b) generación del PDF y correo. |
 | **T**esteable | Sí | Los escenarios incluyen datos concretos de materias y notas. |
 
 **Criterios de aceptación (BDD)**
@@ -239,7 +231,7 @@ Escenario: Bloqueo por deuda administrativa
 | **Postcondición de éxito** | El PDF queda disponible para descargar, la solicitud queda registrada como emitida con su fecha de emisión y se envía el correo con el link, o se registra que el envío falló. |
 | **Postcondición de fracaso** | No se emite ningún certificado, la solicitud queda registrada con su estado y motivo (rechazada o con error) y el alumno recibe un mensaje con el motivo. |
 | **Reglas de negocio** | RD-01, RD-02, RD-03, RD-04 |
-| **Requerimientos relacionados** | RF-01 a RF-07 · RNF-01, RNF-03, RNF-04 |
+| **Requerimientos relacionados** | RF-01, RF-02, RF-03 · RNF-01, RNF-02 |
 
 **Flujo principal**
 
@@ -278,7 +270,7 @@ Escenario: Bloqueo por deuda administrativa
 | E7 | 9 | Falla la generación del PDF. | Informa que ocurrió un error y que intente más tarde. Registra la solicitud con "error". Fin. |
 | E8 | 4 y 10 | La base de datos no está disponible. | No habilita la descarga ni envía el correo. Informa que ocurrió un error y que intente más tarde. El error queda en el registro técnico del sistema, porque no se puede guardar la solicitud. Fin. |
 
-El diagrama de secuencia del CU-01 está en el apartado 4.
+El diagrama de secuencia del CU-01 está en el apartado de Uso de IA en Requerimientos.
 
 ## 3.6 Validación y puntos abiertos
 
@@ -289,7 +281,8 @@ El diagrama de secuencia del CU-01 está en el apartado 4.
 - El tester (S08) revisa que todos los criterios de aceptación se puedan probar.
 - La matriz de trazabilidad (3.7) muestra que ninguna inclusión del alcance queda sin requerimiento y ningún requerimiento queda sin prueba.
 
-**Preguntas abiertas.** Quedan para confirmar con los interesados en la semana 1 y se pasan como supuestos al apartado 5.
+**Preguntas abiertas.** Quedan para confirmar con los interesados en la semana 1 y se pasan como supuestos al apartado de
+Riesgos, supuestos y restricciones.
 
 | # | Pregunta | A quién |
 |---|---|---|
@@ -309,19 +302,13 @@ El diagrama de secuencia del CU-01 está en el apartado 4.
 
 ## 3.7 Matriz de trazabilidad
 
-| Requerimiento | Inclusión del alcance | Objetivo específico | Fuente | Se verifica con |
+| Requerimiento | Inclusiones del alcance | Objetivo del alcance | Fuente | Se verifica con |
 |---|---|---|---|---|
-| RF-01 | Portal web · API | Cobertura funcional | S01, S10 | HU-01, HU-02, CU-01 pasos 1 a 3 |
-| RF-02 | Validación de deudas | Cobertura funcional | S01, S04 | HU-01 (bloqueo por deuda), HU-02 (sin condición de regular), CU-01 E1 y E6 |
-| RF-03 | Generación del PDF | Cobertura funcional | S01 | HU-01 (emisión), HU-02 (materias y notas), CU-01 pasos 8 y 9 y E7 |
-| RF-04 | Portal web | Cobertura funcional | S10 | HU-01 (emisión), CU-01 paso 12 y A2 |
-| RF-05 | Notificación por correo | Cobertura funcional | S01, S10 | HU-01 (emisión y falla del correo), CU-01 E5 |
-| RF-06 | Registro en PostgreSQL | Auditoría y desempeño | S01, S02 | HU-01 (emisión y bloqueo), CU-01 pasos 4 y 10 y E8 |
-| RF-07 | Integración en modo lectura | Calidad de la integración | S03 | HU-01 (sistema no disponible), CU-01 E2 |
-| RNF-01 | Generación del PDF | Auditoría y desempeño | S01 | Logs del piloto (09/12 al 11/12) |
+| RF-01 | Portal web · API | Cobertura funcional | S01, S10 | HU-01, HU-02, CU-01 pasos 1 a 3 y 12, A2 |
+| RF-02 | Validación de deudas · integración en modo lectura | Cobertura funcional · calidad de la integración | S01, S03, S04 | HU-01 (deuda y sistema no disponible), HU-02 (deuda y sin condición de regular), CU-01 E1, E2 y E6 |
+| RF-03 | Generación del PDF · notificación por correo · registro en PostgreSQL | Cobertura funcional · auditoría | S01, S02 | HU-01 (emisión y falla del correo), HU-02 (materias y notas), CU-01 pasos 4 y 8 a 11, E5, E7 y E8 |
+| RNF-01 | Generación del PDF | Métrica de desempeño asociada | S01 | Logs del piloto (09/12 al 11/12) |
 | RNF-02 | Integración en modo lectura | Calidad de la integración | S03 | Suite de pruebas (500 consultas) |
-| RNF-03 | Portal web · API | Cobertura funcional | S03, S01 | Prueba de acceso a certificados ajenos |
-| RNF-04 | Portal web (responsive) | Cobertura funcional | S09, S10 | Pruebas funcionales en desktop y móvil |
 
 ---
 
@@ -329,9 +316,9 @@ El diagrama de secuencia del CU-01 está en el apartado 4.
 
 | Elemento | Se conecta con |
 |---|---|
-| Requerimientos y reglas | Cada RF o RNF cubre una inclusión del alcance (apartado 1) y sale de un stakeholder (apartado 2). |
-| Preguntas abiertas | Pasan como supuestos y riesgos al apartado 5. |
-| RF y historias de usuario | Base de los Puntos de Función (apartado 6) y de las tareas del cronograma (apartado 7). |
-| RNF-01 y RNF-02 | Se miden como KPIs de calidad en el seguimiento (apartado 8). |
-| HU-02 y CU-01 | Se refinaron con IA y se corrigieron a mano (apartado 4). |
-| HU, CU y criterios BDD | Se convierten en las pruebas del UAT (apartado 10). |
+| Requerimientos y reglas | Cada RF o RNF cubre inclusiones del Alcance y sale de un interesado del apartado de Stakeholders. |
+| Preguntas abiertas y RD-04 | Pasan como supuestos y riesgos al apartado de Riesgos, supuestos y restricciones. |
+| RF y historias de usuario | Base de los Puntos de Función (apartado de Estimación de tiempos y costos) y de las tareas del apartado de Planificación. |
+| RNF-01 y RNF-02 | Se controlan como KPIs en el apartado de Seguimiento y control. |
+| HU-02 y CU-01 | Se refinaron con IA y se corrigieron a mano (apartado de Uso de IA en Requerimientos). |
+| HU, CU y criterios BDD | Se convierten en las pruebas del UAT (apartado de Cierre del proyecto). |
