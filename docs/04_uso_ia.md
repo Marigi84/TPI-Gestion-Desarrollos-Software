@@ -4,7 +4,7 @@ Se documentan dos usos de la IA como asistente: **(1)** refinar una historia de 
 **(2)** generar un caso de uso formal con un diagrama Mermaid. Ambos se ejecutaron el 16/10/2026 en Claude Opus 5.5 con esfuerzo medio
 (claude.ai), con un chat nuevo por prompt, sin archivos adjuntos ni historial. Solo se enviaron datos del caso simulado. Para cada uno
 se muestra la instrucción exacta, un resumen de la salida (completa en el enlace) y la corrección humana. Ninguna salida
-pasó al apartado 3 sin ser revisada y corregida.
+pasó al apartado de Ingeniería de Requerimientos sin ser revisada y corregida.
 
 ---
 
@@ -50,7 +50,7 @@ REGLAS
 **Corrección humana**
 
 *Se aceptó:* las ambigüedades nuevas (más de una carrera, reconocer extracurriculares, demora de la deuda y validez sin
-firma avanzada), que pasaron a las preguntas abiertas 9 a 12 del apartado 3.6; registrar también los rechazos con su
+firma avanzada), que pasaron a las preguntas abiertas 9 a 12 (punto 3.6 de Ingeniería de Requerimientos); registrar también los rechazos con su
 motivo; y el estilo de los criterios BDD (tabla de materias de ejemplo y esquema con ejemplos), usado en la HU-02.
 
 | # | Lo que produjo la IA | Problema | Corrección |
@@ -58,9 +58,9 @@ motivo; y el estilo de los criterios BDD (tabla de materias de ejemplo y esquema
 | 1 | Actor "alumno con condición de regular vigente y sin deuda" y "una carrera en la que estoy inscripto". | Mete una regla de validación en el actor y agrega un paso (elegir carrera) que el alcance no prevé. | Actor "alumno regular". La carrera queda como pregunta abierta 9. |
 | 2 | El correo "adjunta el PDF". | Contradice el alcance: el correo lleva un **link de descarga**. | Corregido: el correo lleva un link. |
 | 3 | Datos inventados: regularidad "con vencimiento", alumno "libre", "Comunicate con Tesorería", nota 4 como límite de la escala y fechas fijas. | No sabemos cómo representa esos datos el sistema de alumnos, y los límites de la escala son 1 y 10. | Un solo escenario "sin condición de regular vigente", mensaje genérico, notas fuera de la escala (0 y 11) y sin fechas fijas. |
-| 4 | No dice si se registra la solicitud cuando el sistema de alumnos no responde, no verifica los 30 segundos y no cubre al alumno sin materias aprobadas. | RF-06 pide registrar todas las solicitudes y faltaba probar RNF-01 y un caso límite. | Se agregó el registro con estado "error", el tiempo de 30 segundos y el escenario sin materias aprobadas. |
+| 4 | No dice si se registra la solicitud cuando el sistema de alumnos no responde, no verifica los 30 segundos y no cubre al alumno sin materias aprobadas. | RF-03 pide registrar todas las solicitudes y faltaba probar RNF-01 y un caso límite. | Se agregó el registro con estado "error", el tiempo de 30 segundos y el escenario sin materias aprobadas. |
 
-**Resultado:** la historia **HU-02** del apartado 3.4 es la versión corregida.
+**Resultado:** la historia **HU-02** de Ingeniería de Requerimientos (punto 3.4) es la versión corregida.
 
 ---
 
@@ -105,9 +105,9 @@ REGLAS
 
 **Corrección humana**
 
-*Se aceptó:* el diagrama, que es válido (se renderizó sin errores), y varios aportes que pasaron al apartado 3: avisar en
+*Se aceptó:* el diagrama, que es válido (se renderizó sin errores), y varios aportes que pasaron al apartado de Ingeniería de Requerimientos: avisar en
 pantalla si falla el correo, permitir la descarga desde el link del correo, la caída de la base de datos como excepción
-(E8) y registrar el estado de la notificación en RF-06. Los vacíos sobre el criterio de "regular vigente" y el detalle del
+(E8) y registrar el estado de la notificación en RF-03. Los vacíos sobre el criterio de "regular vigente" y el detalle del
 mensaje por deuda se sumaron a las preguntas 13 y 1.
 
 | # | Lo que produjo la IA | Problema | Corrección |
@@ -116,7 +116,7 @@ mensaje por deuda se sumaron a las preguntas 13 y 1.
 | 2 | ID "CU-SGCA-02", flujo de 16 pasos y supuestos de procesamiento sincrónico y PDF guardado en la base de datos. | El ID no sigue nuestra numeración, un caso de uso se lee mejor desde el usuario y dónde se guarda el PDF es una decisión técnica. | CU-01 con 12 pasos y "Sistema" como único actor. Se descartaron los supuestos técnicos. |
 | 3 | El diagrama tenía solo las ramas pedidas, sin tildes, y mostraba cómo la API recupera el PDF de la base de datos. | Quedaba menos completo que el caso de uso y mostraba un detalle técnico. | Se agregaron las ramas de alumno no regular, sin materias, nota fuera de la escala y falla del correo. Se pusieron las tildes y termina en el botón de descarga. |
 
-**Resultado:** el caso de uso **CU-01** del apartado 3.5 es la versión corregida, con este diagrama final:
+**Resultado:** el caso de uso **CU-01** de Ingeniería de Requerimientos (punto 3.5) es la versión corregida, con este diagrama final:
 
 ![Diagrama de secuencia del caso de uso CU-01](img/cu01_secuencia.png)
 
@@ -187,5 +187,5 @@ sequenceDiagram
 
 | Elemento | Se conecta con |
 |---|---|
-| Prompt 1 | HU-02 (apartado 3.4) y preguntas abiertas 9 a 12 (apartado 3.6). |
-| Prompt 2 | CU-01 (apartado 3.5), RF-06 y preguntas abiertas 1 y 13. Si cae la base de datos, una solicitud puede no registrarse: riesgo para el apartado 5. |
+| Prompt 1 | HU-02 (punto 3.4) y preguntas abiertas 9 a 12 (punto 3.6) de Ingeniería de Requerimientos. |
+| Prompt 2 | CU-01 (punto 3.5), RF-03 y preguntas abiertas 1 y 13 de Ingeniería de Requerimientos. Si cae la base de datos, una solicitud puede no registrarse: riesgo para el apartado de Riesgos, supuestos y restricciones. |
