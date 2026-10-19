@@ -25,8 +25,9 @@
 **Supuestos que sostienen la estimación:**
 
 - **S-01 – Disponibilidad de la información de deudas (apartado 5):** se asume que la deuda
-  administrativa está disponible y se puede consultar en modo lectura desde el sistema de alumnos.
-  Si el dato está en Tesorería, cambia el alcance y esta estimación.
+  administrativa está disponible y se puede consultar en modo lectura. La fuente exacta (sistema de
+  alumnos o Tesorería) se confirma en la semana 1 (apartado 3, pregunta abierta 1); si es Tesorería,
+  cambia el alcance y esta estimación.
 - **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de
   alumnos entrega las materias, las calificaciones y el dato que indica si una materia es
   extracurricular (el que permite excluirla del analítico).
@@ -40,7 +41,7 @@
 
 **Por qué es la tarea crítica:**
 
-- Es la única fuente para validar deudas y regularidad: sin ella no se emite ningún certificado.
+- Es la fuente de la condición de regularidad y de los datos académicos: sin ella no se emite ningún certificado.
 - Depende de un tercero (S03, Área de Sistemas) para los accesos y el formato de los datos.
 - Es la de mayor incertidumbre: API heredada, sin documentación completa y equipo sin experiencia previa.
 
@@ -75,7 +76,7 @@ el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el c
 | Entrada Externa (EE) | Formulario de solicitud (tipo de certificado y confirmación) | Baja | 3 |
 | Salida Externa (EO) | Certificado en PDF con diseño institucional | Baja | 4 |
 | Salida Externa (EO) | Correo de notificación con link de descarga | Baja | 4 |
-| Consulta | Consulta del estado de la solicitud | Baja | 3 |
+| Consulta | Consulta y descarga del certificado emitido desde el portal | Baja | 3 |
 | Archivo Lógico Interno (ALI) | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
 | Archivo de Interfaz Externa (AIE) | Lectura de datos del sistema de alumnos | Baja | 5 |
 | **Total** | | | **26 puntos de función** |
@@ -94,7 +95,7 @@ correcciones, pruebas y documentación.
 
 ### Personal
 
-Se calcula por hora (6 semanas = 240 h por persona), sin redondear meses.
+Se calcula por hora (6 semanas = 240 h por persona).
 
 | Rol | Personas | Horas | Tarifa/h | Subtotal |
 |---|---|---|---|---|
@@ -129,8 +130,8 @@ Presupuesto total    = 10.135,00 + 1.013,50 = USD 11.148,50
 
 La diferencia no es sobrante: es la reserva para los riesgos del apartado 5: **R-01** (la información
 de deudas no está disponible o no se puede consultar) y **R-02** (el sistema de alumnos no provee todos
-los datos académicos o no permite identificar las materias extracurriculares). También cubre cualquier
-cambio de alcance aprobado.
+los datos académicos o no permite identificar las materias extracurriculares). También cubre la
+garantía correctiva de 30 días definida en el alcance y cualquier cambio de alcance aprobado.
 
 ---
 
