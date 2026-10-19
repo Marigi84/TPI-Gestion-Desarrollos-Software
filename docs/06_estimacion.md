@@ -74,12 +74,12 @@ el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el c
 
 | Componente | Elemento del módulo | Complejidad | Puntos |
 |---|---|---|---|
-| Entrada Externa (EE) | Formulario de solicitud (tipo de certificado y confirmación) | Baja | 3 |
-| Salida Externa (EO) | Certificado en PDF con diseño institucional | Baja | 4 |
-| Salida Externa (EO) | Correo de notificación con link de descarga | Baja | 4 |
+| Entrada Externa | Formulario de solicitud (tipo de certificado y confirmación) | Baja | 3 |
+| Salida Externa | Certificado en PDF con diseño institucional | Baja | 4 |
+| Salida Externa | Correo de notificación con link de descarga | Baja | 4 |
 | Consulta | Consulta y descarga del certificado emitido desde el portal | Baja | 3 |
-| Archivo Lógico Interno (ALI) | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
-| Archivo de Interfaz Externa (AIE) | Lectura de datos del sistema de alumnos | Baja | 5 |
+| Archivo Lógico Interno | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
+| Archivo de Interfaz Externa | Lectura de datos del sistema de alumnos | Baja | 5 |
 | **Total** | | | **26 puntos de función** |
 
 ```
