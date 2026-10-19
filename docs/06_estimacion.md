@@ -23,8 +23,9 @@
 **Supuestos (apartado 5):**
 
 - **S-01 – Disponibilidad de la información de deudas (apartado 5):** se asume que la deuda administrativa
-  está disponible y se consulta en modo lectura. La fuente (sistema de alumnos o Tesorería) se confirma en
-  la semana 1 (pregunta abierta 1); si es Tesorería, se evalúa como cambio de alcance.
+  está disponible y se puede consultar en modo lectura. La fuente exacta (sistema de alumnos o Tesorería)
+  se confirma en la semana 1 (apartado 3, pregunta abierta 1). Si es Tesorería, se evalúa como cambio de
+  alcance: se estima el trabajo adicional y se aprueba antes de modificar esta línea base.
 - **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de alumnos
   entrega las materias, las calificaciones y el dato que identifica las materias extracurriculares.
 
@@ -142,3 +143,14 @@ La diferencia es holgura para los riesgos del apartado 5, no sobrante.
 | Plazo de 6 semanas | 30 días hábiles; la tarea crítica ocupa 6,5 días y el módulo, 2,6 semanas |
 | Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de puntos de función |
 | Presupuesto de USD 18.000 | Total estimado USD 11.148,50; holgura de USD 6.851,50 |
+
+---
+
+## 6.7 Conclusión
+
+El proyecto es viable en plazo y costo: la tarea más incierta entra en 6,5 días, el módulo de emisión
+demanda 208 h de las 480 disponibles y el presupuesto total (USD 11.148,50) deja una holgura de
+USD 6.851,50 frente al techo de USD 18.000. Los datos históricos del apartado 6.5 permitirían ajustar la
+productividad y las duraciones, y la verificación del 6.6 confirma que la estimación entra en las
+restricciones del caso. El riesgo no está en el volumen de trabajo, sino en la dependencia de terceros
+para la integración.
