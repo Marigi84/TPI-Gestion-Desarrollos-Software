@@ -1,8 +1,11 @@
 # 6. Estimación de tiempos y costos – SGCA
 
 **Proyecto:** Módulo web de solicitud y descarga de certificados académicos
-**Plazo:** 6 semanas — 02/11/2026 a 11/12/2026 (30 días hábiles)
+
+**Plazo:** 6 semanas — 02/11/2026 a 11/12/2026 
+
 **Equipo:** 2 desarrolladores, 1 tester, 1 diseñador UX
+
 **Presupuesto base:** USD 18.000
 
 ---
@@ -19,11 +22,11 @@
 
 **Supuestos (apartado 5):**
 
-- **S-01:** la deuda administrativa está disponible y se consulta en modo lectura. La fuente (sistema de
-  alumnos o Tesorería) se confirma en la semana 1 (pregunta abierta 1); si es Tesorería, se evalúa como
-  cambio de alcance.
-- **S-02:** el sistema de alumnos entrega las materias, las calificaciones y el dato que identifica las
-  materias extracurriculares.
+- **S-01 – Disponibilidad de la información de deudas (apartado 5):** se asume que la deuda administrativa
+  está disponible y se consulta en modo lectura. La fuente (sistema de alumnos o Tesorería) se confirma en
+  la semana 1 (pregunta abierta 1); si es Tesorería, se evalúa como cambio de alcance.
+- **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de alumnos
+  entrega las materias, las calificaciones y el dato que identifica las materias extracurriculares.
 
 ---
 
