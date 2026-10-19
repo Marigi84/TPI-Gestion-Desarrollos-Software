@@ -1,15 +1,5 @@
 # 6. Estimación de tiempos y costos – SGCA
 
-**Proyecto:** Módulo web de solicitud y descarga de certificados académicos
-
-**Plazo:** 6 semanas — 02/11/2026 a 11/12/2026 
-
-**Equipo:** 2 desarrolladores, 1 tester, 1 diseñador UX
-
-**Presupuesto base:** USD 18.000
-
----
-
 ## 6.1 Base de la estimación
 
 | Parámetro | Valor |
