@@ -17,7 +17,7 @@ Antes de emitir un certificado, el SGCA valida que el alumno no tenga deudas adm
 - Frontend: React
 - Base de datos: PostgreSQL
 
-## Estructura del repositorio
+## Estructura propuesta del repositorio
 
 - `src/`: código fuente.
 - `docs/`: documentación funcional, técnica y de gestión.
