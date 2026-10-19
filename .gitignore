@@ -1,0 +1,26 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores e IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Dependencias y build (Node.js / React)
+node_modules/
+dist/
+build/
+coverage/
+
+# Variables de entorno (nunca se versionan)
+.env
+.env.*
+!.env.example
+
+# Logs y temporales
+*.log
+npm-debug.log*
+yarn-error.log*
+tmp/
