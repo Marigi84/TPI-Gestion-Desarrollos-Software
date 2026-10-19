@@ -26,8 +26,9 @@
 
 - **S-01 – Disponibilidad de la información de deudas (apartado 5):** se asume que la deuda
   administrativa está disponible y se puede consultar en modo lectura. La fuente exacta (sistema de
-  alumnos o Tesorería) se confirma en la semana 1 (apartado 3, pregunta abierta 1); si es Tesorería,
-  cambia el alcance y esta estimación.
+  alumnos o Tesorería) se confirma en la semana 1 (apartado 3, pregunta abierta 1). Si es Tesorería,
+  se evalúa como cambio de alcance: se estima el trabajo adicional y se aprueba antes de modificar
+  esta línea base.
 - **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de
   alumnos entrega las materias, las calificaciones y el dato que indica si una materia es
   extracurricular (el que permite excluirla del analítico).
