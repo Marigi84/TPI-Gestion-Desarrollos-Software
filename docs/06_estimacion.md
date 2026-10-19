@@ -119,7 +119,10 @@ Presupuesto total    = 10.135,00 + 1.013,50 = USD 11.148,50
 | Presupuesto base del caso | 18.000,00 |
 | **Holgura disponible** | **6.851,50 (38,1 %)** |
 
-La diferencia es holgura para los riesgos del apartado 5, no sobrante.
+La diferencia entre el total estimado y el presupuesto base (USD 6.851,50) es holgura, no sobrante:
+cubre los riesgos R-01 (la información de deudas no está disponible o no se puede consultar) y R-02 (el
+sistema de alumnos no provee todos los datos académicos o no permite identificar las materias
+extracurriculares) del apartado 5, y cualquier cambio de alcance aprobado.
 
 ---
 
@@ -134,6 +137,10 @@ La diferencia es holgura para los riesgos del apartado 5, no sobrante.
    requisitos cambiantes).
 7. **Defectos por punto de función**, para convertir la meta de calidad en un número.
 
+Con esos datos, el modelo puede validar el cálculo y devolver un rango con probabilidad (por ejemplo,
+"80 % de que la integración tarde entre 5 y 8 días"), en lugar de una fecha única; el equipo lo contrasta
+con el PERT y decide.
+
 ---
 
 ## 6.6 Coherencia con el caso
@@ -143,6 +150,9 @@ La diferencia es holgura para los riesgos del apartado 5, no sobrante.
 | Plazo de 6 semanas | 30 días hábiles; la tarea crítica ocupa 6,5 días y el módulo, 2,6 semanas |
 | Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de puntos de función |
 | Presupuesto de USD 18.000 | Total estimado USD 11.148,50; holgura de USD 6.851,50 |
+
+Con esto, la estimación entra en las tres restricciones del caso: plazo de 6 semanas, equipo de 4 personas
+y presupuesto de USD 18.000.
 
 ---
 
