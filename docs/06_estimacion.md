@@ -1,8 +1,11 @@
 # 6. Estimación de tiempos y costos – SGCA
 
 **Proyecto:** Módulo web de solicitud y descarga de certificados académicos
-**Plazo del caso:** 6 semanas — 02/11/2026 a 11/12/2026 (30 días hábiles)
+
+**Plazo del caso:** 6 semanas — 02/11/2026 a 11/12/2026
+
 **Equipo:** 2 desarrolladores, 1 tester, 1 diseñador UX
+
 **Presupuesto base:** USD 18.000 · **Tecnología obligatoria:** Node.js, React, PostgreSQL
 
 ---
@@ -27,8 +30,6 @@
 - **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de
   alumnos entrega las materias, las calificaciones y el dato que indica si una materia es
   extracurricular (el que permite excluirla del analítico).
-- **RD-04 – Condición de regular (apartado 3, pregunta abierta 13):** el criterio de "alumno regular
-  vigente" se confirma con Secretaría Académica en la semana 1.
 - No se aprueban cambios de alcance durante las 6 semanas.
 
 ---
@@ -66,7 +67,7 @@ TE = 6,5 días
 
 **Qué se cuenta:** el módulo de emisión completo (RF-03): el alumno solicita, el sistema valida, genera
 el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el certificado. Si se contara
-solo el render del PDF serían 4 PF, pero quedarían afuera la solicitud, el registro y la notificación.
+solo el render del PDF serían 4 puntos de función, pero quedarían afuera la solicitud, el registro y la notificación.
 
 **Criterio de pesos:** se usa la tabla de IFPUG que presenta el material de la materia: complejidad baja
 para componentes con pocos datos, una sola tabla y lógica simple.
@@ -79,17 +80,17 @@ para componentes con pocos datos, una sola tabla y lógica simple.
 | Consulta | Consulta del estado de la solicitud | Baja | 3 |
 | Archivo Lógico Interno (ALI) | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
 | Archivo de Interfaz Externa (AIE) | Lectura de datos del sistema de alumnos | Baja | 5 |
-| **Total** | | | **26 PF** |
+| **Total** | | | **26 puntos de función** |
 
 ```
-26 PF × 8 h/PF = 208 horas de desarrollo
+26 puntos de función × 8 h por punto = 208 horas de desarrollo
 ```
 
 **Contraste con juicio experto:** 2 desarrolladores × 40 h/semana × 2,6 semanas ≈ **208 h**. Coincide.
 Esas 208 h representan el **43 % de las 480 h de desarrollo** disponibles; el resto cubre integración,
 correcciones, pruebas y documentación.
 
-> Los PF miden esfuerzo de desarrollo. No incluyen diseño UX, testing ni gestión: eso se cubre con las
+> Los puntos de función miden esfuerzo de desarrollo. No incluyen diseño UX, testing ni gestión: eso se cubre con las
 > horas del resto del equipo en el presupuesto.
 
 ---
@@ -167,15 +168,15 @@ integración tarde entre 5 y 8 días"), no una fecha única. El equipo lo contra
 | Restricción del caso | Cómo se cumple |
 |---|---|
 | Plazo de 6 semanas | 30 días hábiles; la tarea crítica ocupa 6,5 días; el módulo de emisión, 2,6 semanas de desarrollo |
-| Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de PF |
+| Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de puntos de función |
 | Presupuesto USD 18.000 | Total estimado USD 11.753,50; holgura del 34,7 % |
-| Node.js / React / PostgreSQL | No altera el conteo de PF (mide función, no tecnología); solo define tarifas y herramientas |
+| Node.js / React / PostgreSQL | No altera el conteo de puntos de función (mide función, no tecnología); solo define tarifas y herramientas |
 | Escala 1–10 y sin extracurriculares | Reglas de negocio (RD-02, RD-03): no agregan componentes al conteo |
 
 | Elemento | Se conecta con |
 |---|---|
 | Tarea PERT (6,5 días) | RF-02 / RNF-02 (apartado 3), R-01 (apartado 5) y la ruta crítica del apartado 7 |
-| 26 PF y 208 h | Módulo "Generar certificado PDF" (RF-03) |
+| 26 puntos de función y 208 h | Módulo "Generar certificado PDF" (RF-03) |
 | Presupuesto 11.753,50 | Presupuesto base de USD 18.000 (apartado 1) |
 | Contingencia 10 % | R-01 y R-02 (apartado 5) |
 | Datos históricos | Validación con IA y KPIs del apartado 8 |
