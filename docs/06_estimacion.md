@@ -69,8 +69,7 @@ TE = 6,5 días
 el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el certificado. Si se contara
 solo el render del PDF serían 4 puntos de función, pero quedarían afuera la solicitud, el registro y la notificación.
 
-**Criterio de pesos:** se usa la tabla de IFPUG que presenta el material de la materia: complejidad baja
-para componentes con pocos datos, una sola tabla y lógica simple.
+**Criterio de pesos:** complejidad baja para componentes con pocos datos, una sola tabla y lógica simple.
 
 | Componente | Elemento del módulo | Complejidad | Puntos |
 |---|---|---|---|
@@ -80,7 +79,7 @@ para componentes con pocos datos, una sola tabla y lógica simple.
 | Consulta | Consulta del estado de la solicitud | Baja | 3 |
 | Archivo Lógico Interno (ALI) | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
 | Archivo de Interfaz Externa (AIE) | Lectura de datos del sistema de alumnos | Baja | 5 |
-| **Total** | | | **26 puntos de función** |
+| **Total** | | | **26 PF** |
 
 ```
 26 puntos de función × 8 h por punto = 208 horas de desarrollo
@@ -140,8 +139,10 @@ Presupuesto total    = 10.685,00 + 1.068,50      = USD 11.753,50
 | Presupuesto base del caso | 18.000,00 |
 | **Holgura disponible** | **6.246,50 (34,7 %)** |
 
-La diferencia no es sobrante: es la reserva para los riesgos R-01 (fuente del dato de deuda) y R-02
-(datos académicos incompletos) del apartado 5, y para cualquier cambio de alcance aprobado.
+La diferencia no es sobrante: es la reserva para los riesgos del apartado 5: **R-01** (la información
+de deudas no está disponible o no se puede consultar) y **R-02** (el sistema de alumnos no provee todos
+los datos académicos o no permite identificar las materias extracurriculares). También cubre cualquier
+cambio de alcance aprobado.
 
 ---
 
