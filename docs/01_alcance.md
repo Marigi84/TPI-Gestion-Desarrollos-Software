@@ -62,6 +62,7 @@ mezclar metas de entrega con metas de funcionamiento:
 - Pruebas funcionales y de integración, corrección de defectos y documentación técnica (Docs as Code).
 - Guía Rápida para el alumno, README del repositorio y sesión de traspaso a Secretaría Académica.
 - UAT y firma de conformidad (Sign-off) al cierre.
+- Garantía correctiva de 30 días desde la entrega: corrección sin costo de los defectos que impidan cumplir los criterios de aceptación acordados. No incluye mejoras ni funcionalidades nuevas.
 
 ## 1.4 Exclusiones (fuera del alcance, de forma explícita)
 
@@ -71,7 +72,7 @@ mezclar metas de entrega con metas de funcionamiento:
 - Corrección de notas, promociones o historial académico por parte del SGCA.
 - Integraciones con otros sistemas no especificados (becas, biblioteca, tesis, pagos en línea).
 - Trámite presencial asistido por personal (la entrega es 100 % digital).
-- Mantenimiento evolutivo posterior a la entrega (incluye 30 días de garantía por defectos).
+- Mantenimiento evolutivo posterior a la entrega (mejoras, nuevas funcionalidades o adecuaciones por cambios normativos). La garantía de 30 días es solo correctiva y se detalla en las inclusiones.
 - Certificados en otros idiomas, apostillados o con firma digital avanzada.
 - Capacitación masiva a todo el alumnado (solo se entrega la Guía Rápida y una sesión de traspaso).
 
