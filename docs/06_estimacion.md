@@ -66,8 +66,7 @@ TE = 6,5 días
 ## 6.3 Puntos de Función del módulo "Generar certificado PDF"
 
 **Qué se cuenta:** el módulo de emisión completo (RF-03): el alumno solicita, el sistema valida, genera
-el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el certificado. Si se contara
-solo el render del PDF serían 4 puntos de función, pero quedarían afuera la solicitud, el registro y la notificación.
+el PDF, registra la emisión y notifica. Es la unidad funcional que entrega el certificado.
 
 **Criterio de pesos:** complejidad baja para componentes con pocos datos, una sola tabla y lógica simple.
 
@@ -79,7 +78,7 @@ solo el render del PDF serían 4 puntos de función, pero quedarían afuera la s
 | Consulta | Consulta del estado de la solicitud | Baja | 3 |
 | Archivo Lógico Interno (ALI) | Registro de solicitudes, validación y fecha de emisión | Baja | 7 |
 | Archivo de Interfaz Externa (AIE) | Lectura de datos del sistema de alumnos | Baja | 5 |
-| **Total** | | | **26 PF** |
+| **Total** | | | **26 puntos de función** |
 
 ```
 26 puntos de función × 8 h por punto = 208 horas de desarrollo
@@ -88,9 +87,6 @@ solo el render del PDF serían 4 puntos de función, pero quedarían afuera la s
 **Contraste con juicio experto:** 2 desarrolladores × 40 h/semana × 2,6 semanas ≈ **208 h**. Coincide.
 Esas 208 h representan el **43 % de las 480 h de desarrollo** disponibles; el resto cubre integración,
 correcciones, pruebas y documentación.
-
-> Los puntos de función miden esfuerzo de desarrollo. No incluyen diseño UX, testing ni gestión: eso se cubre con las
-> horas del resto del equipo en el presupuesto.
 
 ---
 
@@ -117,27 +113,19 @@ Se calcula por hora (6 semanas = 240 h por persona), sin redondear meses.
 | Herramientas (gestión, repositorio, diseño) | plan del equipo | USD 180 |
 | **Total infraestructura** | | **USD 535** |
 
-### Otros costos operativos
-
-| Rubro | Detalle | Subtotal |
-|---|---|---|
-| Curva de aprendizaje / capacitación | plantillas institucionales de PDF y contrato de la API | USD 300 |
-| Pruebas de carga y seguridad | antes del UAT | USD 250 |
-| **Total otros** | | **USD 550** |
-
 ### Total y contingencia
 
 ```
-Subtotal             = 9.600 + 535 + 550        = USD 10.685,00
-Contingencia (10 %)  = 10.685,00 × 0,10          = USD  1.068,50
-Presupuesto total    = 10.685,00 + 1.068,50      = USD 11.753,50
+Subtotal             = 9.600 + 535          = USD 10.135,00
+Contingencia (10 %)  = 10.135,00 × 0,10     = USD  1.013,50
+Presupuesto total    = 10.135,00 + 1.013,50 = USD 11.148,50
 ```
 
 | Concepto | USD |
 |---|---|
-| Presupuesto estimado | **11.753,50** |
+| Presupuesto estimado | **11.148,50** |
 | Presupuesto base del caso | 18.000,00 |
-| **Holgura disponible** | **6.246,50 (34,7 %)** |
+| **Holgura disponible** | **6.851,50 (38,1 %)** |
 
 La diferencia no es sobrante: es la reserva para los riesgos del apartado 5: **R-01** (la información
 de deudas no está disponible o no se puede consultar) y **R-02** (el sistema de alumnos no provee todos
@@ -166,19 +154,13 @@ integración tarde entre 5 y 8 días"), no una fecha única. El equipo lo contra
 
 ## 6.6 Coherencia con el caso
 
-| Restricción del caso | Cómo se cumple |
-|---|---|
-| Plazo de 6 semanas | 30 días hábiles; la tarea crítica ocupa 6,5 días; el módulo de emisión, 2,6 semanas de desarrollo |
-| Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de puntos de función |
-| Presupuesto USD 18.000 | Total estimado USD 11.753,50; holgura del 34,7 % |
-| Node.js / React / PostgreSQL | No altera el conteo de puntos de función (mide función, no tecnología); solo define tarifas y herramientas |
-| Escala 1–10 y sin extracurriculares | Reglas de negocio (RD-02, RD-03): no agregan componentes al conteo |
-
 | Elemento | Se conecta con |
 |---|---|
-| Tarea PERT (6,5 días) | RF-02 / RNF-02 (apartado 3), R-01 (apartado 5) y la ruta crítica del apartado 7 |
+| Plazo de 6 semanas | 30 días hábiles; la tarea crítica ocupa 6,5 días y el módulo de emisión, 2,6 semanas |
+| Equipo de 4 personas | 960 h totales; 480 h de desarrollo para 208 h de puntos de función |
+| Presupuesto de USD 18.000 | Total estimado USD 11.148,50 |
+| Tarea PERT (6,5 días) | RF-02 / RNF-02 (apartado 3), R-01 (apartado 5) y ruta crítica del apartado 7 |
 | 26 puntos de función y 208 h | Módulo "Generar certificado PDF" (RF-03) |
-| Presupuesto 11.753,50 | Presupuesto base de USD 18.000 (apartado 1) |
 | Contingencia 10 % | R-01 y R-02 (apartado 5) |
 | Datos históricos | Validación con IA y KPIs del apartado 8 |
 
@@ -187,6 +169,6 @@ integración tarde entre 5 y 8 días"), no una fecha única. El equipo lo contra
 ## 6.7 Conclusión
 
 El proyecto es viable en plazo y costo: la tarea más incierta entra en 6,5 días, el módulo de emisión
-demanda 208 h de las 480 disponibles y el presupuesto total (USD 11.753,50) deja una holgura de
-USD 6.246,50 frente al techo de USD 18.000. El riesgo no está en el volumen de trabajo, sino en la
+demanda 208 h de las 480 disponibles y el presupuesto total (USD 11.148,50) deja una holgura de
+USD 6.851,50 frente al techo de USD 18.000. El riesgo no está en el volumen de trabajo, sino en la
 dependencia de terceros para la integración.
