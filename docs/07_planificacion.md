@@ -1,21 +1,19 @@
 # 7. Planificación – SGCA
 
-> **Estado:** borrador avanzado. La estructura de tareas, dependencias, hitos y entregables ya está definida. Las duraciones definitivas y el cronograma/Gantt se completarán cuando se cierre el apartado 6 de Estimación de tiempos y costos, para mantener coherencia entre ambos puntos.
+## 7.1 Tareas, dependencias y duraciones
 
-## 7.1 Tareas y dependencias
+| ID | Tarea | Duración | Dependencia | Relación con alcance/requerimientos |
+|---|---|---:|---|---|
+| T1 | Relevar y aprobar requerimientos | 5 días | — | Entregable interno de especificación de requerimientos; base de RF, RNF, HU y CU. |
+| T2 | Diseñar arquitectura e integración | 3 días | T1 | Integración en modo lectura con el sistema de alumnos; backend Node.js y PostgreSQL. |
+| T3 | Diseñar experiencia e interfaz UX | 4 días | T1 | Portal web para solicitud y descarga; soporte desktop y móvil definido en alcance. |
+| T4 | Desarrollar backend y lógica de negocio | 7 días | T2 | RF-02 y RF-03: validación de elegibilidad, generación de PDF, registro y notificación. |
+| T5 | Desarrollar frontend | 6 días | T2, T3 | RF-01: selección, solicitud y descarga de certificados desde el portal. |
+| T6 | Integrar sistema de alumnos y servicio de correo | 6,5 días | T4 | Consulta de datos académicos y administrativos en modo lectura; envío del link por correo. |
+| T7 | Ejecutar pruebas y corregir defectos | 5 días | T4, T5, T6 | Criterios BDD, RNF, plan de pruebas y preparación del UAT. |
+| T8 | Desplegar, ejecutar UAT y obtener conformidad | 3 días | T7 | Entregable externo del SGCA funcionando y proceso de aceptación/sign-off. |
 
-| ID | Tarea | Dependencia | Relación con alcance/requerimientos |
-|---|---|---|---|
-| T1 | Relevar y aprobar requerimientos | — | Entregable interno de especificación de requerimientos; base de RF, RNF, HU y CU. |
-| T2 | Diseñar arquitectura e integración | T1 | Integración en modo lectura con el sistema de alumnos; backend Node.js y PostgreSQL. |
-| T3 | Diseñar experiencia e interfaz UX | T1 | Portal web para solicitud y descarga; soporte desktop y móvil definido en alcance. |
-| T4 | Desarrollar backend y lógica de negocio | T2 | RF-02 y RF-03: validación de elegibilidad, generación de PDF, registro y notificación. |
-| T5 | Desarrollar frontend | T3, T2 | RF-01: selección, solicitud y descarga de certificados desde el portal. |
-| T6 | Integrar sistema de alumnos y servicio de correo | T4 | Consulta de datos académicos y de deuda en modo lectura; envío del link por correo. |
-| T7 | Ejecutar pruebas y corregir defectos | T4, T5, T6 | Criterios BDD, RNF, plan de pruebas y preparación del UAT. |
-| T8 | Desplegar, ejecutar UAT y obtener conformidad | T7 | Entregable externo del SGCA funcionando y proceso de aceptación/sign-off. |
-
-> **Duraciones:** pendientes de completar con base en el apartado 6 de Estimación de tiempos y costos.
+La duración de **T6** toma como referencia la estimación PERT del apartado de Estimación de tiempos y costos.
 
 ---
 
@@ -28,12 +26,10 @@ Al finalizar la **semana 1**, Secretaría Académica habrá revisado y aprobado 
 Al finalizar la **semana 2**, estarán validados el flujo de solicitud, la interfaz principal y el diseño de integración en modo lectura con el sistema de alumnos.
 
 ### H-03. Versión funcional integrada disponible para pruebas
-Al finalizar la **semana 4**, estará disponible una versión funcional que permita solicitar certificados, validar elegibilidad, generar el PDF y registrar la solicitud, lista para pruebas integrales.
+A más tardar durante los **primeros dos días hábiles de la semana 5**, estará disponible una versión funcional que permita solicitar certificados, validar elegibilidad, generar el PDF, registrar la solicitud y operar las integraciones necesarias, lista para pruebas integrales.
 
 ### H-04. UAT aprobado y sistema listo para cierre
 Al finalizar la **semana 6**, el SGCA habrá superado las pruebas de aceptación de usuario y contará con la conformidad formal correspondiente.
-
-> Las semanas se revisarán al cerrar la estimación para asegurar que el cronograma sea consistente con las duraciones calculadas.
 
 ---
 
@@ -57,8 +53,35 @@ Destinada a facilitar el uso del sistema y su entrega a la universidad.
 
 ---
 
-## 7.4 Cronograma
+## 7.4 Cronograma y Gantt simple
 
-El cronograma y el Gantt simple se completarán una vez definido el apartado 6 de **Estimación de tiempos y costos**, ya que las duraciones de las tareas deben ser coherentes con las estimaciones del proyecto.
+| Tarea | S1 | S2 | S3 | S4 | S5 | S6 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| T1 Relevar y aprobar requerimientos | █ |  |  |  |  |  |
+| T2 Diseñar arquitectura e integración |  | █ |  |  |  |  |
+| T3 Diseñar experiencia e interfaz UX |  | █ |  |  |  |  |
+| T4 Desarrollar backend y lógica de negocio |  | █ | █ |  |  |  |
+| T5 Desarrollar frontend |  | █ | █ |  |  |  |
+| T6 Integrar sistema de alumnos y servicio de correo |  |  | █ | █ | █ |  |
+| T7 Ejecutar pruebas y corregir defectos |  |  |  |  | █ | █ |
+| T8 Desplegar, ejecutar UAT y obtener conformidad |  |  |  |  |  | █ |
 
-Hasta ese momento, se mantiene como línea base la secuencia de dependencias definida en 7.1 y el plazo máximo de **6 semanas** establecido por el caso.
+---
+
+## 7.5 Ruta crítica y verificación del plazo
+
+Con las duraciones y dependencias definidas, la ruta crítica es:
+
+**T1 → T2 → T4 → T6 → T7 → T8**
+
+Su duración total es:
+
+```text
+5 + 3 + 7 + 6,5 + 5 + 3 = 29,5 días hábiles
+```
+
+El proyecto dispone de aproximadamente **30 días hábiles** dentro de las 6 semanas, por lo que el cronograma entra en el plazo previsto con un margen global aproximado de **0,5 día hábil**.
+
+La rama formada por **T3 y T5** termina antes que la secuencia crítica y dispone de aproximadamente **6,5 días de holgura**, siempre que no se produzcan demoras que afecten el inicio de T7.
+
+La integración representada por **T6** forma parte de la ruta crítica. Por lo tanto, cualquier demora significativa en esa tarea puede desplazar la fecha final del proyecto.
