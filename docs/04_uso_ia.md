@@ -188,4 +188,4 @@ sequenceDiagram
 | Elemento | Se conecta con |
 |---|---|
 | Prompt 1 | HU-02 (punto 3.4) y preguntas abiertas 9 a 12 (punto 3.6) de Ingeniería de Requerimientos. |
-| Prompt 2 | CU-01 (punto 3.5), RF-03 y preguntas abiertas 1 y 13 de Ingeniería de Requerimientos. Si cae la base de datos, una solicitud puede no registrarse: riesgo para el apartado de Riesgos, supuestos y restricciones. |
+| Prompt 2 | CU-01 (punto 3.5), RF-03 y preguntas abiertas 1 y 13 de Ingeniería de Requerimientos. Si cae la base de datos, una solicitud puede no registrarse: posible riesgo adicional para el apartado de Riesgos, supuestos y restricciones. |
