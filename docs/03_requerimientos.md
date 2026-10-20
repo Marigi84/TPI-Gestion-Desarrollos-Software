@@ -55,7 +55,7 @@ apartado de Planificación.
 | ID | Requerimiento | Fuente | Inclusiones del alcance | Reglas |
 |---|---|---|---|---|
 | RF-01 | **Solicitar y descargar el certificado.** El alumno autenticado elige el tipo de certificado (alumno regular o analítico parcial), envía la solicitud desde el portal y descarga el PDF desde el portal o desde el link del correo. Solo accede a sus propios certificados. El portal funciona en desktop (≥ 1024 px) y en móvil (≤ 480 px). | S01, S10 | Portal web, API | — |
-| RF-02 | **Validar la elegibilidad.** Antes de emitir, el sistema consulta en modo solo lectura en el sistema de alumnos la condición de regular y las deudas del alumno. Si no cumple, bloquea la emisión y explica el motivo. | S01, S03, S04 | Validación de deudas, integración en modo lectura | RD-01, RD-04 |
+| RF-02 | **Validar la elegibilidad.** Antes de emitir, el sistema consulta en modo solo lectura, en la fuente que se defina (pregunta abierta 1), la condición de regular y las deudas del alumno. Si no cumple, bloquea la emisión y explica el motivo. | S01, S03, S04 | Validación de deudas, integración en modo lectura | RD-01, RD-04 |
 | RF-03 | **Emitir el certificado.** El sistema genera el PDF con diseño institucional (en el analítico parcial, solo materias aprobadas, con notas de 1 a 10 y sin extracurriculares), registra la solicitud en PostgreSQL y envía al alumno un correo con el link de descarga. El registro guarda el alumno, el tipo de certificado, el estado (en proceso, emitida, rechazada o con error), el estado del correo (enviado o fallido) y la fecha; la fecha de emisión se completa al generar el PDF. | S01, S02 | Generación del PDF, notificación por correo, registro en PostgreSQL | RD-02, RD-03 |
 
 ### 3.2.3 Requerimientos no funcionales (RNF)
@@ -144,6 +144,12 @@ Escenario: Falla el envío del correo
   Cuando se emite mi certificado de alumno regular
   Entonces el certificado queda disponible para descargar en el portal
   Y el sistema registra la notificación como fallida
+
+Escenario: Intento de descargar el certificado de otro alumno
+  Dado que estoy autenticado en el portal
+  Cuando intento descargar un certificado emitido a otro alumno
+  Entonces el sistema rechaza el acceso
+  Y no se entrega ningún archivo
 ```
 
 ### HU-02 – Solicitar certificado analítico parcial
@@ -281,8 +287,10 @@ El diagrama de secuencia del CU-01 está en el apartado de Uso de IA en Requerim
 - El tester (S08) revisa que todos los criterios de aceptación se puedan probar.
 - La matriz de trazabilidad (3.7) muestra que ninguna inclusión del alcance queda sin requerimiento y ningún requerimiento queda sin prueba.
 
-**Preguntas abiertas.** Quedan para confirmar con los interesados en la semana 1 y se pasan como supuestos al apartado de
-Riesgos, supuestos y restricciones.
+**Preguntas abiertas.** Se validan con los interesados en la semana 1. Las que haga falta asumir provisionalmente para
+avanzar se registran como supuestos y, cuando su incumplimiento puede afectar al proyecto, se asocian a un riesgo (por
+ejemplo, las preguntas 1 y 10 dan origen a los supuestos sobre la información de deudas y la información académica del
+apartado de Riesgos, supuestos y restricciones).
 
 | # | Pregunta | A quién |
 |---|---|---|
@@ -304,7 +312,7 @@ Riesgos, supuestos y restricciones.
 
 | Requerimiento | Inclusiones del alcance | Objetivo del alcance | Fuente | Se verifica con |
 |---|---|---|---|---|
-| RF-01 | Portal web · API | Cobertura funcional | S01, S10 | HU-01, HU-02, CU-01 pasos 1 a 3 y 12, A2 |
+| RF-01 | Portal web · API | Cobertura funcional | S01, S10 | HU-01 (incluido el acceso a certificados ajenos), HU-02, CU-01 pasos 1 a 3 y 12, A2 |
 | RF-02 | Validación de deudas · integración en modo lectura | Cobertura funcional · calidad de la integración | S01, S03, S04 | HU-01 (deuda y sistema no disponible), HU-02 (deuda y sin condición de regular), CU-01 E1, E2 y E6 |
 | RF-03 | Generación del PDF · notificación por correo · registro en PostgreSQL | Cobertura funcional · auditoría | S01, S02 | HU-01 (emisión y falla del correo), HU-02 (materias y notas), CU-01 pasos 4 y 8 a 11, E5, E7 y E8 |
 | RNF-01 | Generación del PDF | Métrica de desempeño asociada | S01 | Logs del piloto (09/12 al 11/12) |
@@ -317,7 +325,7 @@ Riesgos, supuestos y restricciones.
 | Elemento | Se conecta con |
 |---|---|
 | Requerimientos y reglas | Cada RF o RNF cubre inclusiones del Alcance y sale de un interesado del apartado de Stakeholders. |
-| Preguntas abiertas y RD-04 | Pasan como supuestos y riesgos al apartado de Riesgos, supuestos y restricciones. |
+| Preguntas abiertas 1 y 10 | Supuestos sobre la información de deudas y la información académica del apartado de Riesgos, supuestos y restricciones. |
 | RF y historias de usuario | Base de los Puntos de Función (apartado de Estimación de tiempos y costos) y de las tareas del apartado de Planificación. |
 | RNF-01 y RNF-02 | Se controlan como KPIs en el apartado de Seguimiento y control. |
 | HU-02 y CU-01 | Se refinaron con IA y se corrigieron a mano (apartado de Uso de IA en Requerimientos). |
