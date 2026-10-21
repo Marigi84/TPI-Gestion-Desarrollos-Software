@@ -22,6 +22,8 @@ La estructura propuesta es:
 │   ├── 09_documentacion_artefactos.md
 │   ├── 10_cierre.md
 │   ├── guia_rapida_alumno.md
+│   ├── anexos/
+│   ├── img/
 │   └── diagramas/
 │       └── solicitud_certificado.md
 ├── tests/
