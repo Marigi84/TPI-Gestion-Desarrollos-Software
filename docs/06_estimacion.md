@@ -10,11 +10,11 @@
 | Tarifa tester / UX | USD 1.400/mes ÷ 160 h = **USD 8,75/h** |
 | Productividad | **8 h por punto de función** |
 
-**Supuestos (apartado 5 – Riesgos, supuestos y restricciones):**
+**Supuestos (apartado de "Riesgos, supuestos y restricciones"):**
 
 - **SUP-01 – Disponibilidad de la información de deudas:** se asume que la deuda administrativa está
   disponible y se puede consultar en modo lectura. La fuente exacta (sistema de alumnos o Tesorería) se
-  confirma en la semana 1 (apartado 3 – Ingeniería de Requerimientos, pregunta abierta 1). Si es Tesorería,
+  confirma en la semana 1 (apartado de "Ingeniería de Requerimientos", pregunta abierta 1). Si es Tesorería,
   se evalúa como cambio de alcance: se estima el trabajo adicional y se aprueba antes de modificar esta
   línea base.
 - **SUP-02 – Disponibilidad de la información académica:** se asume que el sistema de alumnos entrega las
@@ -47,7 +47,7 @@ TE = 6,5 días
 ```
 
 **Resultado:** la tarea se planifica en **6,5 días** y es la tarea de la ruta crítica del cronograma
-(apartado 7 – Planificación). Si se extiende, se corre la fecha de cierre del proyecto.
+(apartado de "Planificación"). Si se extiende, se corre la fecha de cierre del proyecto.
 
 ---
 
@@ -55,7 +55,7 @@ TE = 6,5 días
 
 Se interpreta "Generar certificado PDF" como el **flujo completo de generación y emisión** del
 certificado (RF-01 a RF-03): solicitud y descarga, lectura del sistema de alumnos, generación del PDF,
-registro y notificación. Es la unidad funcional que entrega el certificado; si se tomara solo el render
+registro y notificación. Es la unidad funcional que entrega el certificado; si se contara solo la generación
 del PDF, serían 4 puntos de función.
 
 **Criterio de pesos:** complejidad baja para componentes con pocos datos, una sola tabla y lógica simple.
@@ -116,7 +116,7 @@ Presupuesto total    = 10.135,00 + 1.013,50 = USD 11.148,50
 La diferencia entre el total estimado y el presupuesto base (USD 6.851,50) es holgura, no sobrante:
 cubre los riesgos R-01 (la información de deudas no está disponible o no se puede consultar) y R-02 (el
 sistema de alumnos no provee todos los datos académicos o no permite identificar las materias
-extracurriculares) del apartado 5 (Riesgos, supuestos y restricciones), y cualquier cambio de alcance
+extracurriculares) del apartado de "Riesgos, supuestos y restricciones", y cualquier cambio de alcance
 aprobado.
 
 ---
@@ -155,7 +155,7 @@ y presupuesto de USD 18.000.
 
 El proyecto es viable en plazo y costo: la tarea más incierta entra en 6,5 días, el módulo de emisión
 demanda 208 h de las 480 disponibles y el presupuesto total (USD 11.148,50) deja una holgura de
-USD 6.851,50 frente al techo de USD 18.000. Los datos históricos del apartado 6.5 permitirían ajustar la
-productividad y las duraciones, y la verificación del 6.6 confirma que la estimación entra en las
+USD 6.851,50 frente al techo de USD 18.000. Los datos históricos permitirían ajustar la
+productividad y las duraciones, y la verificación de coherencia confirma que la estimación entra en las
 restricciones del caso. El riesgo no está en el volumen de trabajo, sino en la dependencia de terceros
 para la integración.
