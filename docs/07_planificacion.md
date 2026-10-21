@@ -37,19 +37,19 @@ Al finalizar la **semana 6**, el SGCA habrá superado las pruebas de aceptación
 
 ### Entregables internos
 
-**E1. Documento de especificación de requerimientos**  
+**ENT-01. Documento de especificación de requerimientos — Semana 1**  
 Incluye requerimientos funcionales y no funcionales, reglas de dominio, historias de usuario, criterios BDD y Caso de Uso.
 
-**E2. Plan de pruebas e informe de defectos**  
-Se utiliza para verificar funcionalidad, integración y criterios de aceptación antes del UAT.
+**ENT-02. Plan de pruebas e informe de defectos — Semana 4**  
+Al finalizar la semana 4 queda preparado el plan de pruebas con su matriz de trazabilidad. El informe de defectos se completa durante la ejecución de las pruebas y queda consolidado antes del UAT.
 
 ### Entregables externos
 
-**E3. SGCA desplegado y aceptado**  
-Incluye las funcionalidades de solicitud, validación, generación de PDF, registro y notificación operativas.
+**ENT-03. SGCA desplegado y aceptado — Semana 6**  
+Incluye las funcionalidades de solicitud, validación, generación de PDF, registro y notificación operativas, junto con la conformidad correspondiente.
 
-**E4. Guía rápida de usuario y transferencia**  
-Destinada a facilitar el uso del sistema y su entrega a la universidad.
+**ENT-04. Guía rápida de usuario y transferencia — Semanas 5 y 6**  
+La Guía Rápida queda disponible en la semana 5 y la sesión de transferencia a Secretaría Académica se realiza durante la semana 6.
 
 ---
 
@@ -62,7 +62,7 @@ Destinada a facilitar el uso del sistema y su entrega a la universidad.
 | T3 Diseñar experiencia e interfaz UX |  | █ |  |  |  |  |
 | T4 Desarrollar backend y lógica de negocio |  | █ | █ |  |  |  |
 | T5 Desarrollar frontend |  | █ | █ |  |  |  |
-| T6 Integrar sistema de alumnos |  |  | █ | █ | █ |  |
+| T6 Integrar sistema de alumnos |  |  |  | █ | █ |  |
 | T7 Ejecutar pruebas y corregir defectos |  |  |  |  | █ | █ |
 | T8 Desplegar, ejecutar UAT y obtener conformidad |  |  |  |  |  | █ |
 
