@@ -10,14 +10,15 @@
 | Tarifa tester / UX | USD 1.400/mes ÷ 160 h = **USD 8,75/h** |
 | Productividad | **8 h por punto de función** |
 
-**Supuestos (apartado 5):**
+**Supuestos (apartado 5 – Riesgos, supuestos y restricciones):**
 
-- **S-01 – Disponibilidad de la información de deudas (apartado 5):** se asume que la deuda administrativa
-  está disponible y se puede consultar en modo lectura. La fuente exacta (sistema de alumnos o Tesorería)
-  se confirma en la semana 1 (apartado 3, pregunta abierta 1). Si es Tesorería, se evalúa como cambio de
-  alcance: se estima el trabajo adicional y se aprueba antes de modificar esta línea base.
-- **S-02 – Disponibilidad de la información académica (apartado 5):** se asume que el sistema de alumnos
-  entrega las materias, las calificaciones y el dato que identifica las materias extracurriculares.
+- **SUP-01 – Disponibilidad de la información de deudas:** se asume que la deuda administrativa está
+  disponible y se puede consultar en modo lectura. La fuente exacta (sistema de alumnos o Tesorería) se
+  confirma en la semana 1 (apartado 3 – Ingeniería de Requerimientos, pregunta abierta 1). Si es Tesorería,
+  se evalúa como cambio de alcance: se estima el trabajo adicional y se aprueba antes de modificar esta
+  línea base.
+- **SUP-02 – Disponibilidad de la información académica:** se asume que el sistema de alumnos entrega las
+  materias, las calificaciones y el dato que identifica las materias extracurriculares.
 
 ---
 
@@ -28,14 +29,14 @@
 **Por qué es la tarea crítica:**
 
 - Es la fuente de la condición de regularidad y de los datos académicos: sin ella no se emite ningún certificado.
-- Depende de un tercero (S03, Área de Sistemas) para los accesos y el formato de los datos.
-- Es la de mayor incertidumbre: API heredada, sin documentación completa y equipo sin experiencia previa.
+- Depende de un tercero (S03, Área de Sistemas) y de un sistema que no controlamos: los accesos y el
+  formato de los datos no dependen del equipo, y ahí está la mayor incertidumbre.
 
 | Escenario | Qué representa | Días |
 |---|---|---|
 | **Optimista (O)** | Accesos el primer día, API documentada y datos completos | 3 |
 | **Más probable (M)** | Coordinación normal con Sistemas para obtener accesos y validar el formato de los datos | 6 |
-| **Pesimista (P)** | Accesos demorados, cambios en el contrato de la API y curva de aprendizaje | 12 |
+| **Pesimista (P)** | Accesos demorados, cambios en el contrato de la API y demoras de coordinación con Sistemas | 12 |
 
 ```
 TE = (O + 4 × M + P) / 6
@@ -46,13 +47,16 @@ TE = 6,5 días
 ```
 
 **Resultado:** la tarea se planifica en **6,5 días** y es la tarea de la ruta crítica del cronograma
-(apartado 7). Si se extiende, se corre la fecha de cierre del proyecto.
+(apartado 7 – Planificación). Si se extiende, se corre la fecha de cierre del proyecto.
 
 ---
 
 ## 6.3 Puntos de Función del módulo "Generar certificado PDF"
 
-Se cuenta el flujo completo de emisión (RF-03): solicitud, PDF, registro y notificación.
+Se interpreta "Generar certificado PDF" como el **flujo completo de generación y emisión** del
+certificado (RF-01 a RF-03): solicitud y descarga, lectura del sistema de alumnos, generación del PDF,
+registro y notificación. Es la unidad funcional que entrega el certificado; si se tomara solo el render
+del PDF, serían 4 puntos de función.
 
 **Criterio de pesos:** complejidad baja para componentes con pocos datos, una sola tabla y lógica simple.
 
@@ -112,7 +116,8 @@ Presupuesto total    = 10.135,00 + 1.013,50 = USD 11.148,50
 La diferencia entre el total estimado y el presupuesto base (USD 6.851,50) es holgura, no sobrante:
 cubre los riesgos R-01 (la información de deudas no está disponible o no se puede consultar) y R-02 (el
 sistema de alumnos no provee todos los datos académicos o no permite identificar las materias
-extracurriculares) del apartado 5, y cualquier cambio de alcance aprobado.
+extracurriculares) del apartado 5 (Riesgos, supuestos y restricciones), y cualquier cambio de alcance
+aprobado.
 
 ---
 
