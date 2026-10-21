@@ -2,11 +2,11 @@
 
 ## 5.1 Supuestos
 
-### S-01. Disponibilidad de información de deudas
+### SUP-01. Disponibilidad de información de deudas
 
 Se asume que la información de deudas administrativas estará disponible y podrá ser consultada por el SGCA en modo lectura durante el procesamiento de las solicitudes.
 
-### S-02. Disponibilidad de información académica
+### SUP-02. Disponibilidad de información académica
 
 Se asume que el sistema de alumnos dispondrá de la información académica necesaria para generar el certificado analítico parcial, incluyendo materias, calificaciones e identificación de materias extracurriculares.
 
