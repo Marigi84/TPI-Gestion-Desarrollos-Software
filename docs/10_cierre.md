@@ -1,17 +1,8 @@
 # 10. Cierre del proyecto – SGCA
 
-**Proyecto:** Módulo web de solicitud y descarga de certificados académicos
-**Período:** 02/11/2026 a 11/12/2026 (6 semanas)
-**Cierre formal:** 11/12/2026
-**Equipo:** 2 desarrolladores, 1 tester, 1 diseñador UX
-**Presupuesto base:** USD 18.000
-
----
-
 ## 10.1 Definition of Done (DoD)
 
-El módulo se considera terminado cuando cumple **todos** estos criterios. Al 11/12/2026 se verificaron
-todos con la evidencia indicada.
+El módulo se considera terminado cuando cumple **todos** estos criterios.
 
 | Dimensión | Criterio de Done | Evidencia | Estado |
 |---|---|---|---|
@@ -43,9 +34,9 @@ prueba, antes de la aceptación formal.
 | Coordinación | S06 Gestor del proyecto | Convoca, controla tiempos y registra decisiones |
 | Infraestructura | S03 Área de Sistemas | Habilita el ambiente y los accesos de lectura |
 
-**Alcance:** 20 pruebas del plan, escenarios BDD de HU-01 y HU-02, caso de uso CU-01, suite de 500
-consultas, control de acceso a certificados ajenos, reglas del PDF (escala 1–10 y extracurriculares) y
-envío de correo.
+**Alcance:** escenarios BDD de HU-01 y HU-02, caso de uso CU-01, control de acceso a certificados ajenos y reglas del 
+PDF. Se toman como evidencia las 20 pruebas y la suite de 500 consultas ejecutadas en T7 (02 al 04/12), que cubren los 
+objetivos 1 y 2 del alcance.
 
 **Criterios de entrada:** T7 finalizada, build desplegado en staging, datos de prueba cargados y 0
 defectos críticos o altos abiertos.
@@ -55,8 +46,7 @@ defectos críticos o altos abiertos.
 **Criterios de salida:** 100 % de las pruebas Must aprobadas, 0 defectos críticos o altos abiertos, y
 defectos medios o bajos con solución alternativa aceptada por S01.
 
-**Resultado:** 20 de 20 pruebas aprobadas; 500 consultas con 0,4 % de fallas; 6 defectos encontrados
-durante el proyecto, todos corregidos; sin defectos críticos ni altos al cierre.
+**Resultado:** escenarios BDD aprobados por S01 y S05; 0 defectos críticos o altos. Se apoyan en los 20/20 de T7 y en el 0,4 % de fallas de las 500 consultas."
 
 **Evidencia:** plan de pruebas ejecutado, informe de defectos, PDF de muestra, reporte de la suite de
 500 consultas y acta de UAT.
@@ -94,8 +84,9 @@ los criterios de aceptación, y el soporte pasa a S03 y S01 según el traspaso d
 
 ### 10.4.1 Resumen ejecutivo
 
-El SGCA se entregó en las 6 semanas previstas (02/11 a 11/12/2026) y dentro del presupuesto: costo final
-de **USD 11.238,50** frente a un base de USD 18.000. Se implementaron los dos certificados, la validación
+El SGCA se entregó en las 6 semanas previstas (02/11 a 11/12/2026) y dentro del presupuesto: costo real
+de **USD 10.225,00**, con **USD 923,50** de contingencia sin usar sobre un presupuesto estimado de
+USD 11.148,50 y muy por debajo del techo de USD 18.000. Se implementaron los dos certificados, la validación
 de deudas y regularidad, la generación del PDF con las reglas del caso, la notificación por correo, el
 registro con fecha de emisión y la integración de solo lectura. El UAT cerró con 20/20 pruebas aprobadas
 y sin defectos críticos ni altos. El principal riesgo fue la dependencia de terceros para la integración,
@@ -106,7 +97,7 @@ que se materializó en un día de atraso y se recuperó sin mover la fecha de ci
 | Área | Planificado | Real | Desvío | Acción |
 |---|---|---|---|---|
 | Plazo | Ruta crítica 29,5 días; cierre 11/12 | T6 terminó 1 día tarde (02/12) | +1 día en T6 | Se comprimió T7 de 5 a 4 días; T8 se ejecutó del 09 al 11/12 |
-| Costo | USD 11.148,50 | USD 11.238,50 | +USD 90 (8 h de desarrollo) | Absorbido por la contingencia de USD 1.013,50 |
+| Costo | Base estimada: USD 10.135,00 | Costo real: USD 10.225,00 | +USD 90 (8 h de desarrollo) | Absorbido por la contingencia; saldo USD 923,50 |
 | Alcance | 3 RF y 2 RNF, sin cambios | Igual | 0 cambios aprobados | Los pedidos fuera de alcance quedaron como Won't |
 | Calidad | 20 pruebas; densidad ≤ 0,3 | 20/20; 6 defectos (0,23) | Sin desvío | Todos los defectos corregidos antes del UAT |
 
@@ -130,8 +121,9 @@ que se materializó en un día de atraso y se recuperó sin mover la fecha de ci
   S03 mantiene la administración del sistema de alumnos.
 - **Traspaso:** S01 y S05 operan el módulo; S03 soporta la infraestructura. La documentación y la guía
   rápida quedan entregadas.
-- **Presupuesto:** costo final USD 11.238,50; contingencia utilizada USD 90; saldo de contingencia
-  USD 923,50.
+- **Presupuesto:** costo real al cierre USD 10.225,00; contingencia utilizada USD 90; saldo de
+  contingencia USD 923,50. La garantía (1 desarrollador al 20 % durante 30 días, ≈ USD 540) se imputa a
+  ese saldo: quedan ≈ USD 383,50.
 
 ### 10.4.5 Lecciones aprendidas (resumen con IA y validación humana)
 
@@ -149,7 +141,7 @@ respaldar con hechos y se agregó la lección sobre el uso de IA, que la IA no h
 
 | Lección | Evidencia | Acción para el próximo proyecto |
 |---|---|---|
-| Acordar accesos de terceros en la semana 1 | T6 se retrasó 1 día por credenciales (R-01) | Incluir el acceso como hito de la semana 1 |
+| Acordar accesos de terceros en la semana 1 | T6 se retrasó 1 día por credenciales (R-01 / dependencia de S03) | Incluir el acceso como hito de la semana 1 |
 | Reservar margen de cronograma | La ruta crítica usó 29,5 de 30 días | Reservar al menos un 10 % de buffer |
 | Definir el límite del módulo antes de estimar | El conteo pasó de 4 a 26 puntos según la interpretación | Validar el alcance del conteo con la cátedra/cliente |
 | Usar la IA con contexto y códigos, y validar siempre | La IA inventó "PDF adjunto" y un ID de caso de uso | Mantener la revisión humana como paso obligatorio |
