@@ -43,12 +43,12 @@ defectos críticos o altos abiertos.
 
 **Ejecución:** 09 al 11/12/2026, con seguimiento diario de defectos y reclasificación por severidad.
 
-**Criterios de salida:** 100 % de las pruebas Must aprobadas, 0 defectos críticos o altos abiertos, y
+**Criterios de salida:** 100 % de los escenarios Must aprobados, 0 defectos críticos o altos abiertos, y
 defectos medios o bajos con solución alternativa aceptada por S01.
 
 **Resultado:** escenarios BDD aprobados por S01 y S05; 0 defectos críticos o altos. Se apoyan en los 20/20 de T7 y en el 0,4 % de fallas de las 500 consultas.
 
-**Evidencia:** plan de pruebas ejecutado, informe de defectos, PDF de muestra, reporte de la suite de
+**Evidencia:** plan de pruebas de T7, informe de defectos, PDF de muestra, reporte de la suite de
 500 consultas y acta de UAT.
 
 ---
@@ -71,7 +71,7 @@ defectos medios o bajos con solución alternativa aceptada por S01.
 | Proyecto y versión | SGCA – versión 1.0 |
 | Fecha | 11/12/2026 |
 | Entregables aceptados | Módulo en producción, guía rápida, documentación técnica y plan de pruebas |
-| Resultado de UAT | 20/20 pruebas aprobadas; 0 defectos críticos o altos |
+| Resultado de UAT | Escenarios BDD aprobados; 0 defectos críticos o altos |
 | Condiciones | Garantía correctiva de 30 días (11/12/2026 a 10/01/2027); no incluye mantenimiento evolutivo |
 | Firmantes | S01 Secretaría Académica y S02 Autoridades |
 
@@ -89,6 +89,17 @@ de **USD 10.225,00**, con **USD 923,50** de contingencia sin usar sobre un presu
 USD 11.148,50 y muy por debajo del techo de USD 18.000. Se implementaron los dos certificados, la validación
 de deudas y regularidad, la generación del PDF con las reglas del caso, la notificación por correo, el
 registro con fecha de emisión y la integración de solo lectura. El UAT cerró con los escenarios BDD aprobados y sin defectos críticos ni altos; las 20/20 pruebas y las 500 consultas se habían cerrado en T7.
+
+**Resultados vs objetivos:**
+
+| Objetivo | Meta | Resultado |
+|---|---|---|
+| Solicitudes emitidas sin intervención manual | ≥ 95 % | 96 % |
+| Dos tipos de certificado operativos antes del 04/12 | 100 % | 100 % (T7, 03–04/12) |
+| Fallas en 500 consultas | < 1 % | 0,4 % |
+| Solicitudes registradas con fecha de emisión | 100 % | 100 % |
+| Generación del PDF | ≤ 30 s | ≤ 30 s (piloto) |
+| Pruebas del plan | 20/20 | 20/20 |
 
 ### 10.4.2 Desvíos
 
@@ -111,8 +122,7 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 
 ### 10.4.4 Liberación de recursos
 
-- **Personas:** los 4 integrantes se liberan el 11/12/2026. Un desarrollador queda al 20 % durante la
-  garantía (30 días) para correcciones; el resto del equipo se reasigna.
+- **Personas:** Tres integrantes se liberan el 11/12/2026. Un desarrollador queda al 20 % durante la garantía (30 días) para correcciones; el resto del equipo se reasigna.
 - **Infraestructura:** producción y el servicio de correo se mantienen. El ambiente de staging se apaga
   al finalizar la garantía.
 - **Accesos:** se revocan las credenciales de desarrollo; el SGCA conserva una cuenta de solo lectura y
@@ -152,7 +162,7 @@ respaldar con hechos y se agregó la lección sobre el uso de IA, que la IA no h
 | Elemento | Se conecta con |
 |---|---|
 | DoD | Objetivos del Alcance y RF/RNF de Requerimientos |
-| UAT | HU-01, HU-02, CU-01 y las 20 pruebas del plan |
+| UAT | HU-01, HU-02 y CU-01 (escenarios BDD); las 20 pruebas y las 500 consultas se verifican en T7 |
 | Sign-off | S01 y S02 de Stakeholders; entregables del Alcance |
 | Desvíos | R-01 (Riesgos), PERT y presupuesto (Estimación); cronograma (Planificación) |
 | Deuda técnica | Exclusiones del Alcance y decisiones técnicas del proyecto |
