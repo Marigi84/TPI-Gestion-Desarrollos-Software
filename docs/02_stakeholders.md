@@ -32,7 +32,8 @@ apartados de requerimientos, riesgos y planificación.
 | S11 | **Proveedor de correo e infraestructura** | Provee el servicio de envío de mails y el alojamiento del sistema. | Externo | **Bajo:** cumplir las condiciones de su servicio. | **Media:** una caída o un límite de envíos afecta las notificaciones. | **Monitorear:** revisar límites de envío y definir un plan alternativo si el servicio falla. |
 
 > Los datos de S04 y S11 (quién aporta la información de deudas y quién provee correo y hosting) son supuestos a confirmar
-> con la universidad. Se registran en el apartado de riesgos, supuestos y restricciones.
+> con la universidad. El de S04 se registra como SUP-01 en el apartado de Riesgos, supuestos y restricciones; el de S11 se
+> confirma en la semana 1 con el área de Sistemas.
 
 ## 2.3 Matriz de influencia e interés
 
@@ -80,7 +81,7 @@ quadrantChart
 | Elemento | Se conecta con |
 |---|---|
 | S01 y S02 | Aprueban la línea base del Alcance y la conformidad final (entregable externo 1). |
-| S03, S04 y S11 | Dependencias que alimentan el apartado de Riesgos, supuestos y restricciones. |
+| S03 y S04 | Dependencias que originan SUP-01, SUP-02, R-01 y R-02 del apartado de Riesgos, supuestos y restricciones. |
 | S05 y S10 | Fuentes principales de elicitación (apartado de Ingeniería de Requerimientos). |
 | S07, S08 y S09 | Capacidad del equipo para los apartados de Estimación de tiempos y costos y de Planificación. |
 | Acciones de alineación | Reporte de avance y KPIs del apartado de Seguimiento y control. |
