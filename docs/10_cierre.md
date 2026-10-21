@@ -108,7 +108,7 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 | Plazo | Ruta crítica 29,5 días; cierre 11/12 | T6 terminó 1 día tarde (02/12) | +1 día en T6 | Se comprimió T7 de 5 a 4 días; T8 se ejecutó del 09 al 11/12 |
 | Costo | Base estimada: USD 10.135,00 | Costo real: USD 10.225,00 | +USD 90 (8 h de desarrollo) | Absorbido por la contingencia; saldo USD 923,50 |
 | Alcance | 3 RF y 2 RNF, sin cambios | Igual | 0 cambios aprobados | Los pedidos fuera de alcance quedaron como Won't |
-| Calidad | 20 pruebas; densidad ≤ 0,3 | 20/20; 6 defectos (0,23) | Sin desvío | Todos los defectos corregidos antes del UAT |
+| Calidad | 20 pruebas; densidad ≤ 0,3 | 20/20; 6 defectos (0,23) | Sin desvío | Los 6 defectos de T7 se corrigieron antes del UAT; no aparecieron defectos nuevos en UAT |
 
 ### 10.4.3 Deuda técnica
 
@@ -139,8 +139,8 @@ Se pidió a la IA que sintetizara las lecciones a partir del informe final, los 
 registro de riesgos, sin inventar datos. **Resumen generado:**
 
 > Las tres lecciones principales son: acordar los accesos de terceros en la primera semana, porque su
-> demora fue el único desvío de plazo; reservar un margen de cronograma mayor al 0,5 día, porque el PERT
-> de la integración admite hasta 8 días; y definir el límite del módulo antes de contar Puntos de
+> demora fue el único desvío de plazo; reservar un margen de cronograma mayor al 0,5 día, porque el rango esperado del PERT
+> de la integración llega a 8 días (pesimista: 12); y definir el límite del módulo antes de contar Puntos de
 > Función, porque la interpretación cambió el resultado de 4 a 26 puntos.
 
 **Validación humana:** la IA propuso también lecciones genéricas ("mejorar la comunicación" y "capacitar
@@ -154,16 +154,3 @@ respaldar con hechos y se agregó la lección sobre el uso de IA, que la IA no h
 | Definir el límite del módulo antes de estimar | El conteo pasó de 4 a 26 puntos según la interpretación | Validar el alcance del conteo con la cátedra/cliente |
 | Usar la IA con contexto y códigos, y validar siempre | La IA inventó "PDF adjunto" y un ID de caso de uso | Mantener la revisión humana como paso obligatorio |
 | Documentar la API de terceros desde el inicio | La documentación incompleta quedó como deuda técnica | Pedir la documentación en el relevamiento |
-
----
-
-## 10.5 Trazabilidad
-
-| Elemento | Se conecta con |
-|---|---|
-| DoD | Objetivos del Alcance y RF/RNF de Requerimientos |
-| UAT | HU-01, HU-02 y CU-01 (escenarios BDD); las 20 pruebas y las 500 consultas se verifican en T7 |
-| Sign-off | S01 y S02 de Stakeholders; entregables del Alcance |
-| Desvíos | R-01 (Riesgos), PERT y presupuesto (Estimación); cronograma (Planificación) |
-| Deuda técnica | Exclusiones del Alcance y decisiones técnicas del proyecto |
-| Lecciones aprendidas | Uso de IA en Requerimientos y reportes de Seguimiento y control |
