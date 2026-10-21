@@ -1,6 +1,6 @@
-# Anexo – Salida completa del prompt 1 (copia de respaldo)
+# Anexo A – Salida completa del prompt 1
 
-Copia sin modificar de la respuesta de la IA al prompt 1 del apartado 4. Chat original: https://claude.ai/share/352d14af-226a-4412-ab09-d076196a44e1 (16/10/2026).
+Respuesta sin modificar de la IA al prompt 1 del apartado de Uso de IA en Requerimientos (Claude Opus 5.5, esfuerzo medio). Chat original: https://claude.ai/share/352d14af-226a-4412-ab09-d076196a44e1 (16/10/2026).
 
 ````markdown
 ## 1. Ambigüedades, supuestos implícitos y datos faltantes

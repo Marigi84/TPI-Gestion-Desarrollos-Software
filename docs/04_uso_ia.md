@@ -3,7 +3,8 @@
 Se documentan dos usos de la IA como asistente: **(1)** refinar una historia de usuario y detectar ambigüedades, y
 **(2)** generar un caso de uso formal con un diagrama Mermaid. Ambos se ejecutaron el 16/10/2026 en Claude Opus 5.5 con esfuerzo medio
 (claude.ai), con un chat nuevo por prompt, sin archivos adjuntos ni historial. Solo se enviaron datos del caso simulado. Para cada uno
-se muestra la instrucción exacta, un resumen de la salida (completa en el enlace) y la corrección humana. Ninguna salida
+se muestra la instrucción exacta, un resumen de la salida y la corrección humana. La salida completa de cada prompt está
+en el Anexo A y el Anexo B, que forman parte de este documento; los enlaces a los chats quedan como trazabilidad. Ninguna salida
 pasó al apartado de Ingeniería de Requerimientos sin ser revisada y corregida.
 
 ---
@@ -40,7 +41,7 @@ REGLAS
 - Sé conciso y no escribas texto introductorio.
 ```
 
-**Salida de la IA** (completa en https://claude.ai/share/352d14af-226a-4412-ab09-d076196a44e1)
+**Salida de la IA** (resumen; completa en el Anexo A y en el chat https://claude.ai/share/352d14af-226a-4412-ab09-d076196a44e1)
 
 - **15 ambigüedades,** cada una con su pregunta y a quién hacerla.
 - **Historia refinada,** 4 supuestos y verificación INVEST (cumple los seis criterios).
@@ -96,7 +97,7 @@ REGLAS
 - Sé conciso y no escribas texto introductorio.
 ```
 
-**Salida de la IA** (completa en https://claude.ai/share/a83aecaf-3f96-4cf0-a0da-eb5a8e8353af)
+**Salida de la IA** (resumen; completa en el Anexo B y en el chat https://claude.ai/share/a83aecaf-3f96-4cf0-a0da-eb5a8e8353af)
 
 - **Caso de uso completo** de 16 pasos, con 2 flujos alternativos y 6 excepciones.
 - **Diagrama de secuencia** en Mermaid con las ramas de sistema no disponible, deuda y camino feliz.
