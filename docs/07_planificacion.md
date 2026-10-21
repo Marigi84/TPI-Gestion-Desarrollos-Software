@@ -40,8 +40,8 @@ Al finalizar la **semana 6**, el SGCA habrá superado las pruebas de aceptación
 **ENT-01. Documento de especificación de requerimientos — Semana 1**  
 Incluye requerimientos funcionales y no funcionales, reglas de dominio, historias de usuario, criterios BDD y Caso de Uso.
 
-**ENT-02. Plan de pruebas e informe de defectos — Semana 4**  
-Al finalizar la semana 4 queda preparado el plan de pruebas con su matriz de trazabilidad. El informe de defectos se completa durante la ejecución de las pruebas y queda consolidado antes del UAT.
+**ENT-02. Plan de pruebas e informe de defectos**  
+El plan de pruebas y la matriz de trazabilidad quedan preparados al finalizar la **semana 4**. El informe de defectos se completa durante la ejecución de **T7** y queda consolidado antes del UAT, en la **semana 6**.
 
 ### Entregables externos
 
