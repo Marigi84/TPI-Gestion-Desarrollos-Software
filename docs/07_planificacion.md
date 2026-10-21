@@ -9,7 +9,7 @@
 | T3 | Diseñar experiencia e interfaz UX | 4 días | T1 | Portal web para solicitud y descarga; soporte desktop y móvil definido en alcance. |
 | T4 | Desarrollar backend y lógica de negocio | 7 días | T2 | RF-02 y RF-03: validación de elegibilidad, generación de PDF, registro y notificación. |
 | T5 | Desarrollar frontend | 6 días | T2, T3 | RF-01: selección, solicitud y descarga de certificados desde el portal. |
-| T6 | Integrar sistema de alumnos y servicio de correo | 6,5 días | T4 | Consulta de datos académicos y administrativos en modo lectura; envío del link por correo. |
+| T6 | Integrar sistema de alumnos | 6,5 días | T4 | Consulta de datos académicos y administrativos en modo lectura. |
 | T7 | Ejecutar pruebas y corregir defectos | 5 días | T4, T5, T6 | Criterios BDD, RNF, plan de pruebas y preparación del UAT. |
 | T8 | Desplegar, ejecutar UAT y obtener conformidad | 3 días | T7 | Entregable externo del SGCA funcionando y proceso de aceptación/sign-off. |
 
@@ -62,7 +62,7 @@ Destinada a facilitar el uso del sistema y su entrega a la universidad.
 | T3 Diseñar experiencia e interfaz UX |  | █ |  |  |  |  |
 | T4 Desarrollar backend y lógica de negocio |  | █ | █ |  |  |  |
 | T5 Desarrollar frontend |  | █ | █ |  |  |  |
-| T6 Integrar sistema de alumnos y servicio de correo |  |  | █ | █ | █ |  |
+| T6 Integrar sistema de alumnos |  |  | █ | █ | █ |  |
 | T7 Ejecutar pruebas y corregir defectos |  |  |  |  | █ | █ |
 | T8 Desplegar, ejecutar UAT y obtener conformidad |  |  |  |  |  | █ |
 
