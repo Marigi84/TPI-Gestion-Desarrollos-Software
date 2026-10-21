@@ -35,7 +35,7 @@ prueba, antes de la aceptación formal.
 | Infraestructura | S03 Área de Sistemas | Habilita el ambiente y los accesos de lectura |
 
 **Alcance:** escenarios BDD de HU-01 y HU-02, caso de uso CU-01, control de acceso a certificados ajenos y reglas del 
-PDF. Se toman como evidencia las 20 pruebas y la suite de 500 consultas ejecutadas en T7 (02 al 04/12), que cubren los 
+PDF. Se toman como evidencia las 20 pruebas y la suite de 500 consultas ejecutadas en T7 (03 al 04/12), que cubren los 
 objetivos 1 y 2 del alcance.
 
 **Criterios de entrada:** T7 finalizada, build desplegado en staging, datos de prueba cargados y 0
@@ -46,7 +46,7 @@ defectos críticos o altos abiertos.
 **Criterios de salida:** 100 % de las pruebas Must aprobadas, 0 defectos críticos o altos abiertos, y
 defectos medios o bajos con solución alternativa aceptada por S01.
 
-**Resultado:** escenarios BDD aprobados por S01 y S05; 0 defectos críticos o altos. Se apoyan en los 20/20 de T7 y en el 0,4 % de fallas de las 500 consultas."
+**Resultado:** escenarios BDD aprobados por S01 y S05; 0 defectos críticos o altos. Se apoyan en los 20/20 de T7 y en el 0,4 % de fallas de las 500 consultas.
 
 **Evidencia:** plan de pruebas ejecutado, informe de defectos, PDF de muestra, reporte de la suite de
 500 consultas y acta de UAT.
@@ -88,9 +88,7 @@ El SGCA se entregó en las 6 semanas previstas (02/11 a 11/12/2026) y dentro del
 de **USD 10.225,00**, con **USD 923,50** de contingencia sin usar sobre un presupuesto estimado de
 USD 11.148,50 y muy por debajo del techo de USD 18.000. Se implementaron los dos certificados, la validación
 de deudas y regularidad, la generación del PDF con las reglas del caso, la notificación por correo, el
-registro con fecha de emisión y la integración de solo lectura. El UAT cerró con 20/20 pruebas aprobadas
-y sin defectos críticos ni altos. El principal riesgo fue la dependencia de terceros para la integración,
-que se materializó en un día de atraso y se recuperó sin mover la fecha de cierre.
+registro con fecha de emisión y la integración de solo lectura. El UAT cerró con los escenarios BDD aprobados y sin defectos críticos ni altos; las 20/20 pruebas y las 500 consultas se habían cerrado en T7.
 
 ### 10.4.2 Desvíos
 
