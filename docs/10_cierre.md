@@ -35,7 +35,7 @@ prueba, antes de la aceptación formal.
 | Infraestructura | S03 Área de Sistemas | Habilita el ambiente y los accesos de lectura |
 
 **Alcance:** escenarios BDD de HU-01 y HU-02, caso de uso CU-01, control de acceso a certificados ajenos y reglas del 
-PDF. Se toman como evidencia las 20 pruebas y la suite de 500 consultas ejecutadas en T7 (03 al 04/12), que cubren los 
+PDF. Se toman como evidencia las 20 pruebas y la suite de 500 consultas ejecutadas el 03 y 04/12, dentro de T7 (03 al 08/12), que cubren los 
 objetivos 1 y 2 del alcance.
 
 **Criterios de entrada:** T7 finalizada, build desplegado en staging, datos de prueba cargados y 0
@@ -95,7 +95,7 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 | Objetivo | Meta | Resultado |
 |---|---|---|
 | Solicitudes emitidas sin intervención manual | ≥ 95 % | 96 % |
-| Dos tipos de certificado operativos antes del 04/12 | 100 % | 100 % (T7, 03–04/12) |
+| Dos tipos de certificado operativos antes del 04/12 | 100 % | 100 % (20 pruebas, 03–04/12) |
 | Fallas en 500 consultas | < 1 % | 0,4 % |
 | Solicitudes registradas con fecha de emisión | 100 % | 100 % |
 | Generación del PDF | ≤ 30 s | ≤ 30 s (piloto) |
@@ -115,7 +115,7 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 | Ítem | Por qué quedó | Impacto | Prioridad |
 |---|---|---|---|
 | Panel de consulta para Secretaría | Excluido del alcance; la consulta se hace por base de datos | Operación manual para el personal administrativo | Media |
-| Reenvío automático del correo | Solo se implementó el reintento manual | Si falla el correo, el alumno descarga desde el portal | Baja |
+| Reintento automático del correo | El sistema registra el fallo y permite reintentar manualmente; el reenvío a pedido del alumno es Won't | Si falla el correo, el alumno descarga desde el portal | Baja |
 | Documentación de la API del sistema de alumnos | Depende de S03 y de documentación inexistente | Mayor tiempo de mantenimiento e integración | Media |
 | Pruebas de carga limitadas a 500 consultas | El alcance fijó ese volumen | No se conoce el comportamiento con mayor demanda | Baja |
 | Automatización de pruebas E2E | Las pruebas se ejecutaron manualmente | Más tiempo en cada regresión | Media |
@@ -130,8 +130,7 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 - **Traspaso:** S01 y S05 operan el módulo; S03 soporta la infraestructura. La documentación y la guía
   rápida quedan entregadas.
 - **Presupuesto:** costo real al cierre USD 10.225,00; contingencia utilizada USD 90; saldo de
-  contingencia USD 923,50. La garantía (1 desarrollador al 20 % durante 30 días, ≈ USD 540) se imputa a
-  ese saldo: quedan ≈ USD 383,50.
+  contingencia USD 923,50. La garantía (1 desarrollador al 20 % durante 30 días: USD 1.800 × 20 % = USD 360) se imputa a ese saldo: quedan ≈ USD 563,50.
 
 ### 10.4.5 Lecciones aprendidas (resumen con IA y validación humana)
 
@@ -149,7 +148,7 @@ respaldar con hechos y se agregó la lección sobre el uso de IA, que la IA no h
 
 | Lección | Evidencia | Acción para el próximo proyecto |
 |---|---|---|
-| Acordar accesos de terceros en la semana 1 | T6 se retrasó 1 día por credenciales (R-01 / dependencia de S03) | Incluir el acceso como hito de la semana 1 |
+| Acordar accesos de terceros en la semana 1 | T6 se retrasó 1 día por credenciales (dependencia de S03) | Incluir el acceso como hito de la semana 1 |
 | Reservar margen de cronograma | La ruta crítica usó 29,5 de 30 días | Reservar al menos un 10 % de buffer |
 | Definir el límite del módulo antes de estimar | El conteo pasó de 4 a 26 puntos según la interpretación | Validar el alcance del conteo con la cátedra/cliente |
 | Usar la IA con contexto y códigos, y validar siempre | La IA inventó "PDF adjunto" y un ID de caso de uso | Mantener la revisión humana como paso obligatorio |
