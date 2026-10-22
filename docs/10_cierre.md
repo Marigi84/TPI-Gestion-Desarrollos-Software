@@ -70,10 +70,10 @@ defectos medios o bajos con solución alternativa aceptada por S01.
 |---|---|
 | Proyecto y versión | SGCA – versión 1.0 |
 | Fecha | 11/12/2026 |
-| Entregables aceptados | Módulo en producción, guía rápida, documentación técnica y plan de pruebas |
-| Resultado de UAT | Escenarios BDD aprobados; 0 defectos críticos o altos |
-| Condiciones | Garantía correctiva de 30 días (11/12/2026 a 10/01/2027); no incluye mantenimiento evolutivo |
-| Firmantes | S01 Secretaría Académica y S02 Autoridades |
+| Entregables aceptados | Módulo en producción, guía rápida, documentación técnica y plan de pruebas. |
+| Resultado de UAT | Escenarios BDD aprobados; 0 defectos críticos o altos. |
+| Condiciones | Garantía correctiva de 30 días (11/12/2026 a 10/01/2027); no incluye mantenimiento evolutivo. |
+| Firmantes | S01 Secretaría Académica y S02 Autoridades. |
 
 **Después de la firma:** el módulo queda en producción, la garantía cubre defectos que impidan cumplir
 los criterios de aceptación, y el soporte pasa a S03 y S01 según el traspaso documentado.
