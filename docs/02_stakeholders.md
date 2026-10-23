@@ -81,7 +81,8 @@ quadrantChart
 | Elemento | Se conecta con |
 |---|---|
 | S01 y S02 | Aprueban la línea base del Alcance y la conformidad final (entregable externo 1). |
-| S03 y S04 | Dependencias que originan SUP-01, SUP-02, R-01 y R-02 del apartado de Riesgos, supuestos y restricciones. |
+| S04 | Origen de SUP-01 y R-01 (información de deudas) del apartado de Riesgos, supuestos y restricciones. |
+| S03 | Origen de SUP-02 y R-02 (datos académicos y acceso de lectura) del apartado de Riesgos, supuestos y restricciones. |
 | S05 y S10 | Fuentes principales de elicitación (apartado de Ingeniería de Requerimientos). |
 | S07, S08 y S09 | Capacidad del equipo para los apartados de Estimación de tiempos y costos y de Planificación. |
 | Acciones de alineación | Reporte de avance y KPIs del apartado de Seguimiento y control. |
