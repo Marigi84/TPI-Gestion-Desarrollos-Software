@@ -6,7 +6,7 @@ Se usa **1 sprint = 1 semana** (6 sprints en total).
 
 | KPI | Qué mide y cómo se calcula | Meta | Umbral de alerta | Fuente | Decisión que habilita |
 |---|---|---|---|---|---|
-| **Velocity** | Puntos de historia completados por sprint. Backlog de 120 puntos (estimación del equipo sobre las historias de las 8 tareas del plan). | ≥ 20 puntos | < 16 durante 2 sprints | Tablero | Ajustar el alcance del sprint o reasignar trabajo |
+| **Velocity** | Puntos de historia completados por sprint. Backlog de 120 puntos (8 tareas × 15 puntos promedio; unidad de seguimiento del tablero). | ≥ 20 puntos | < 16 durante 2 sprints | Tablero | Ajustar el alcance del sprint o reasignar trabajo |
 | **Lead Time** | Días desde que se pide un cambio hasta que se entrega. | ≤ 5 días | > 8 días | Tablero | Escalar el bloqueo o revisar la dependencia |
 | **Cycle Time** | Días desde que una tarea empieza a desarrollarse hasta que se termina. | ≤ 2 días hábiles | > 4 días | Tablero | Reducir el trabajo en curso y atacar el cuello de botella |
 | **Densidad de defectos** | Defectos encontrados en QA ÷ 26 puntos de función del módulo. | ≤ 0,3 (≤ 8 defectos) | > 0,5 (> 13 defectos) | Plan de pruebas | Frenar la liberación y reforzar las pruebas |
@@ -19,6 +19,9 @@ Se usa **1 sprint = 1 semana** (6 sprints en total).
 - **Lead Time:** mide el tiempo real que espera el usuario, no solo el trabajo del equipo.
 - **Cycle Time:** muestra dónde se traba el flujo, sobre todo en la integración, que es la ruta crítica.
 - **Densidad de defectos:** mide la calidad del producto terminado y habilita o frena la liberación.
+
+Los puntos de historia se usan solo para medir velocity; no reemplazan los Puntos de Función de la
+estimación ni los días del cronograma.
 
 ---
 
@@ -40,7 +43,7 @@ El avance es del 60 % frente al 62 % planificado. H-03 está en riesgo porque T6
 
 #### En curso
 
-- **Validación de deudas (T4):** 18 de 20 pruebas aprobadas; faltan los casos de deuda cancelada el mismo día.
+- **Validación de deudas (T4):** 6 de 8 casos aprobados; faltan los casos de deuda cancelada el mismo día.
 - **Registro de solicitudes (T4):** operativo en PostgreSQL; faltan índices de consulta.
 - **Plantilla del certificado (T4):** en revisión con Secretaría Académica (escala 1–10 y exclusión de extracurriculares).
 - **Frontend (T5):** descarga y estados de la solicitud en revisión final.
@@ -54,7 +57,7 @@ El avance es del 60 % frente al 62 % planificado. H-03 está en riesgo porque T6
 #### Próximos pasos
 
 1. Escalar B1 en el comité del 23/11 y acordar la entrega de credenciales para el 24/11 (impacto: 1 día en T6).
-2. Cerrar las 20 pruebas de validación de deudas y T4/T5 antes del 23/11.
+2. Cerrar los 8 casos de validación de deudas y T4/T5 antes del 23/11.
 3. Iniciar T6 el 23/11 ni bien lleguen las credenciales.
 4. Recalcular el pronóstico de H-03 con la velocity de las últimas tres semanas.
 
@@ -65,7 +68,7 @@ El avance es del 60 % frente al 62 % planificado. H-03 está en riesgo porque T6
 | Velocity | 17 puntos | ≥ 20 | 🟡 |
 | Lead Time | 6,2 días | ≤ 5 días | 🟡 |
 | Cycle Time | 2,4 días | ≤ 2 días | 🟡 |
-| Densidad de defectos | 0,23 (6 defectos) | ≤ 0,3 | 🟢 |
+| Densidad de defectos | 0 (sin defectos registrados) | ≤ 0,3 | 🟢 |
 
 ---
 
@@ -115,7 +118,7 @@ Con estos cuatro indicadores, el comité semanal puede detectar un desvío antes
 | Elemento | Se conecta con |
 |---|---|
 | Velocity y Lead Time | Objetivo general y cronograma (Alcance y Planificación) |
-| Cycle Time | Tarea crítica de 6,5 días y riesgo R-01 (Riesgos, supuestos y restricciones; Estimación de tiempos y costos) |
+| Cycle Time | Tarea crítica de 6,5 días y dependencia de S03 (Riesgos, supuestos y restricciones; Estimación de tiempos y costos) |
 | Densidad de defectos | Objetivo 1 (20 pruebas) y 26 puntos de función (Alcance y Estimación de tiempos y costos) |
 | Reporte semanal | Acción 1 de alineación de stakeholders (Stakeholders) |
-| Alertas de IA | R-01 y R-02 (Riesgos, supuestos y restricciones) y comité semanal |
+| Alertas de IA | R-02 y dependencia de S03 (Riesgos, supuestos y restricciones) y comité semanal |
