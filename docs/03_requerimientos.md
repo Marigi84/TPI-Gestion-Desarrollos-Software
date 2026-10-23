@@ -289,8 +289,8 @@ El diagrama de secuencia del CU-01 está en el apartado de Uso de IA en Requerim
 
 **Preguntas abiertas.** Se validan con los interesados en la semana 1. Las que haga falta asumir provisionalmente para
 avanzar se registran como supuestos y, cuando su incumplimiento puede afectar al proyecto, se asocian a un riesgo (por
-ejemplo, las preguntas 1 y 10 dan origen a los supuestos sobre la información de deudas y la información académica del
-apartado de Riesgos, supuestos y restricciones).
+ejemplo, las preguntas 1 y 10 dan origen a los supuestos SUP-01 (información de deudas) y SUP-02 (información académica)
+del apartado de Riesgos, supuestos y restricciones).
 
 | # | Pregunta | A quién |
 |---|---|---|
@@ -325,7 +325,7 @@ apartado de Riesgos, supuestos y restricciones).
 | Elemento | Se conecta con |
 |---|---|
 | Requerimientos y reglas | Cada RF o RNF cubre inclusiones del Alcance y sale de un interesado del apartado de Stakeholders. |
-| Preguntas abiertas 1 y 10 | Supuestos sobre la información de deudas y la información académica del apartado de Riesgos, supuestos y restricciones. |
+| Preguntas abiertas 1 y 10 | Supuestos SUP-01 y SUP-02 del apartado de Riesgos, supuestos y restricciones. |
 | RF y historias de usuario | Base de los Puntos de Función (apartado de Estimación de tiempos y costos) y de las tareas del apartado de Planificación. |
 | RNF-01 y RNF-02 | Se controlan como KPIs en el apartado de Seguimiento y control. |
 | HU-02 y CU-01 | Se refinaron con IA y se corrigieron a mano (apartado de Uso de IA en Requerimientos). |
