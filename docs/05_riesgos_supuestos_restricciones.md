@@ -31,10 +31,6 @@ El proyecto deberá completarse dentro de un plazo máximo de **6 semanas**.
 
 El desarrollo deberá realizarse utilizando obligatoriamente **Node.js para el backend, React para el frontend y PostgreSQL como base de datos**.
 
-### RE-03. Integración en modo solo lectura
-
-El SGCA podrá consultar información del sistema de alumnos, pero **no podrá crear, modificar ni eliminar datos en ese sistema**.
-
 ---
 
 ## 5.4 Relación entre supuesto, riesgo y restricción
