@@ -18,7 +18,7 @@ La estructura propuesta es:
 │   ├── 05_riesgos_supuestos_restricciones.md
 │   ├── 06_estimacion.md
 │   ├── 07_planificacion.md
-│   ├── 08_seguimiento_control.md
+│   ├── 08_seguimiento_y_control.md
 │   ├── 09_documentacion_artefactos.md
 │   ├── 10_cierre.md
 │   ├── guia_rapida_alumno.md
