@@ -46,7 +46,7 @@ Algunos indicadores del proyecto se **monitorean** pero no se fijan como objetiv
 mezclar metas de entrega con metas de funcionamiento:
 
 - **Tiempo de generación del certificado en PDF:** ≤ 30 segundos, medido en los logs del piloto
-  (09/12/2026 al 11/12/2026). Se controla junto con los KPIs del apartado de Seguimiento y control.
+  (09/12/2026 al 11/12/2026).
 
 ## 1.3 Inclusiones (lo que el equipo se compromete a entregar)
 

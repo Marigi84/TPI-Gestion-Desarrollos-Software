@@ -327,6 +327,6 @@ del apartado de Riesgos, supuestos y restricciones).
 | Requerimientos y reglas | Cada RF o RNF cubre inclusiones del Alcance y sale de un interesado del apartado de Stakeholders. |
 | Preguntas abiertas 1 y 10 | Supuestos SUP-01 y SUP-02 del apartado de Riesgos, supuestos y restricciones. |
 | RF y historias de usuario | Base de los Puntos de Función (apartado de Estimación de tiempos y costos) y de las tareas del apartado de Planificación. |
-| RNF-01 y RNF-02 | Se controlan como KPIs en el apartado de Seguimiento y control. |
+| RNF-01 y RNF-02 | Se verifican con la suite de pruebas y los logs del piloto (objetivos del Alcance). |
 | HU-02 y CU-01 | Se refinaron con IA y se corrigieron a mano (apartado de Uso de IA en Requerimientos). |
 | HU, CU y criterios BDD | Se convierten en las pruebas del UAT (apartado de Cierre del proyecto). |
