@@ -7,8 +7,8 @@ Se usa **1 sprint = 1 semana** (6 sprints en total).
 | KPI | Qué mide y cómo se calcula | Meta | Umbral de alerta | Fuente | Decisión que habilita |
 |---|---|---|---|---|---|
 | **Velocity** | Puntos de historia completados por sprint. Backlog de 120 puntos (8 tareas × 15 puntos promedio; unidad de seguimiento del tablero). | ≥ 20 puntos | < 16 durante 2 sprints | Tablero | Ajustar el alcance del sprint o reasignar trabajo |
-| **Lead Time** | Días desde que se pide un cambio hasta que se entrega. | ≤ 5 días | > 8 días | Tablero | Escalar el bloqueo o revisar la dependencia |
-| **Cycle Time** | Días desde que una tarea empieza a desarrollarse hasta que se termina. | ≤ 2 días hábiles | > 4 días | Tablero | Reducir el trabajo en curso y atacar el cuello de botella |
+| **Lead Time** | Días desde que se solicita un trabajo o cambio hasta que se entrega, incluyendo esperas. | ≤ 5 días | > 8 días | Tablero | Escalar el bloqueo o revisar la dependencia |
+| **Cycle Time** | Días desde que comienza el trabajo hasta que termina, sin contar la espera previa. | ≤ 2 días hábiles | > 4 días | Tablero | Reducir el trabajo en curso y atacar el cuello de botella |
 | **Densidad de defectos** | Defectos encontrados en QA ÷ 26 puntos de función del módulo. | ≤ 0,3 (≤ 8 defectos) | > 0,5 (> 13 defectos) | Plan de pruebas | Frenar la liberación y reforzar las pruebas |
 
 **Por qué estos cuatro y no otros:** cubren las tres dimensiones del proyecto (entrega, flujo y calidad) con datos que ya genera el equipo, sin sumar trabajo de medición. No se usan DORA porque el proyecto tiene un solo despliegue al final, ni SPACE porque requiere encuestas que no entran en 6 semanas. Son métricas simples, adecuadas a un proyecto de baja complejidad.
