@@ -1,15 +1,9 @@
 # Conclusión
 
-El trabajo muestra que el SGCA es viable dentro de las restricciones del caso. El presupuesto estimado es de
-USD 11.148,50 frente a un techo de USD 18.000, el módulo principal suma 26 Puntos de Función (208 horas) y la ruta crítica del cronograma ocupa 29,5 de
-los 30 días hábiles disponibles. El riesgo principal no está en el volumen de trabajo, sino en la dependencia de
-terceros: el acceso al sistema de alumnos y la información de deudas.
+El TPI muestra la gestión integral del SGCA desde la definición del alcance hasta su cierre formal. La trazabilidad permite vincular objetivos, requerimientos, riesgos, estimaciones, tareas, métricas, pruebas y criterios de aceptación, evitando que cada apartado funcione de manera aislada.
 
-Una buena definición del alcance fue la base de todo lo demás. Gracias a ella, los 3 requerimientos funcionales y los
-2 no funcionales cubren cada inclusión del alcance, y los pedidos fuera de él quedaron como Won't, en lugar de
-convertirse en *scope creep*. A su vez, la trazabilidad entre objetivos, requerimientos, estimación, planificación,
-seguimiento y cierre permitió detectar y corregir contradicciones antes de la entrega.
+Las técnicas seleccionadas se aplicaron con un criterio de gestión: PERT permitió estimar la tarea de integración más incierta; los Puntos de Función dimensionaron el flujo funcional de generación y emisión; el presupuesto incorporó contingencia; la ruta crítica permitió verificar el plazo; y los KPIs ofrecieron información para tomar decisiones durante la ejecución. Los riesgos y supuestos se conectaron con dependencias concretas del sistema de alumnos y con la restricción temporal del proyecto.
 
-La IA resultó útil como asistente para detectar ambigüedades y generar borradores, pero toda su salida tuvo que
-revisarse: inventó datos y supuestos que contradecían el alcance. Por último, trabajar con Docs as Code y revisión
-cruzada hizo que cada integrante conozca y pueda justificar el trabajo completo, no solo su parte.
+El uso de inteligencia artificial se mantuvo como apoyo y no como sustituto del análisis profesional. Las salidas se documentaron, se identificaron errores y supuestos inventados, y se corrigieron antes de incorporarlas. Esto refuerza una de las lecciones centrales del trabajo: en gestión de proyectos de software, la calidad de la decisión depende tanto de las herramientas utilizadas como de la validación crítica del equipo.
+
+Finalmente, el proyecto simulado cumple alcance, plazo, costo y criterios de aceptación, y deja documentados el UAT, Sign-off, deuda técnica, liberación de recursos y lecciones aprendidas. El resultado es un proyecto coherente, trazable y defendible desde la perspectiva de la gestión de desarrollos de software.

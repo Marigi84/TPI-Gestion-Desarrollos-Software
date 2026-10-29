@@ -2,7 +2,7 @@
 
 ## 9.1 Enfoque Docs as Code
 
-La documentación del proyecto se gestiona siguiendo el enfoque Docs as Code: se escribe en Markdown, se versiona con Git y se revisa mediante Pull Requests junto con el resto de los artefactos del proyecto.
+La documentación del proyecto se gestiona siguiendo el enfoque Docs as Code: se escribe en Markdown, se versiona con Git y se revisa mediante Pull Requests junto con el resto de los artefactos del proyecto. El repositorio completo, con su historial de cambios, issues y revisiones, puede consultarse en: https://github.com/Marigi84/TPI-Gestion-Desarrollos-Software
 
 La estructura propuesta es:
 

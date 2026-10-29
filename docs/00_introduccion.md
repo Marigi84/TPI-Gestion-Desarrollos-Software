@@ -1,16 +1,7 @@
 # Introducción
 
-Este informe presenta el Trabajo Práctico Integrador de Gestión de Desarrollos de Software sobre el caso
-**Sistema de Gestión de Certificados Académicos (SGCA)**: un módulo web para que los alumnos de una universidad
-soliciten y descarguen en PDF los certificados de alumno regular y analítico parcial, con validación de deudas,
-notificación por correo, registro de cada solicitud e integración en modo lectura con el sistema de alumnos.
+El presente Trabajo Práctico Integrador desarrolla la gestión del proyecto Sistema de Gestión de Certificados Académicos (SGCA), un módulo web destinado a una universidad para que los alumnos soliciten y descarguen certificados académicos en formato PDF. El caso contempla dos certificados: alumno regular y analítico parcial; validación de deudas administrativas; generación del documento; notificación por correo electrónico; registro de la solicitud y fecha de emisión; e integración en modo solo lectura con el sistema de alumnos existente.
 
-El equipo actúa como gestor del proyecto y analista de requerimientos: no se programa el sistema, sino que se
-planifica, especifica, controla y cierra su desarrollo dentro de las restricciones del caso (6 semanas, un equipo de
-4 personas, un presupuesto de USD 18.000 y la tecnología obligatoria Node.js, React y PostgreSQL).
+El trabajo aborda el proyecto de forma integral, relacionando alcance, stakeholders, ingeniería de requerimientos, uso crítico de inteligencia artificial, riesgos, estimación, planificación, seguimiento y control, documentación bajo el enfoque Docs as Code y cierre formal. Las decisiones se mantienen trazables entre los distintos apartados para que el proyecto pueda analizarse como una gestión coherente de principio a fin.
 
-El informe recorre el ciclo completo del proyecto en diez apartados: alcance, stakeholders, ingeniería de
-requerimientos, uso de IA en requerimientos, riesgos, estimación, planificación, seguimiento y control, documentación
-y cierre. Cada apartado cierra con una tabla de trazabilidad que lo conecta con los demás. La documentación se trabajó
-con el enfoque Docs as Code (Markdown, Git y revisión cruzada mediante Pull Requests), y las salidas completas de la
-IA se incluyen como Anexo A y Anexo B.
+El caso se desarrolla con un plazo simulado de 6 semanas, un equipo compuesto por 2 desarrolladores, 1 tester y 1 diseñador UX, un presupuesto máximo de USD 18.000 y tecnologías obligatorias: Node.js para backend, React para frontend y PostgreSQL como base de datos.
