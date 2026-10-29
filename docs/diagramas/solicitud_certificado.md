@@ -1,5 +1,9 @@
 # Diagrama del proceso de solicitud de certificado
 
+![Diagrama del proceso de solicitud de certificado](../img/proceso_solicitud.png)
+
+Código Mermaid del diagrama:
+
 ```mermaid
 flowchart TD
     A[Alumno inicia la solicitud] --> B[Selecciona el tipo de certificado]
