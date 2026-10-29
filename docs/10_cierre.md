@@ -114,11 +114,12 @@ registro con fecha de emisión y la integración de solo lectura. El UAT cerró 
 
 | Ítem | Por qué quedó | Impacto | Prioridad |
 |---|---|---|---|
-| Panel de consulta para Secretaría | Excluido del alcance; la consulta se hace por base de datos | Operación manual para el personal administrativo | Media |
 | Reintento automático del correo | El sistema registra el fallo y permite reintentar manualmente; el reenvío a pedido del alumno es Won't | Si falla el correo, el alumno descarga desde el portal | Baja |
 | Documentación de la API del sistema de alumnos | Depende de S03 y de documentación inexistente | Mayor tiempo de mantenimiento e integración | Media |
 | Pruebas de carga limitadas a 500 consultas | El alcance fijó ese volumen | No se conoce el comportamiento con mayor demanda | Baja |
 | Automatización de pruebas E2E | Las pruebas se ejecutaron manualmente | Más tiempo en cada regresión | Media |
+
+Las funcionalidades definidas como Won't (por ejemplo, el panel de consulta para Secretaría o el reenvío del correo a pedido del alumno) no son deuda técnica: quedan en el backlog como funcionalidades futuras.
 
 ### 10.4.4 Liberación de recursos
 
