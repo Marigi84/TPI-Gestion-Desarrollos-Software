@@ -41,3 +41,9 @@ La Guía Rápida del alumno se encuentra en:
 El diagrama del proceso de solicitud se encuentra en:
 
 `docs/diagramas/solicitud_certificado.md`
+
+## Informe entregado
+
+El informe final del TPI en PDF se encuentra en:
+
+`entrega/TPI-GDS_Cordero-Giardini-Dauria.pdf`

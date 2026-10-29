@@ -2,7 +2,7 @@
 
 ## 9.1 Enfoque Docs as Code
 
-La documentación del proyecto se gestiona siguiendo el enfoque Docs as Code: se escribe en Markdown, se versiona con Git y se revisa mediante Pull Requests junto con el resto de los artefactos del proyecto.
+La documentación del proyecto se gestiona siguiendo el enfoque Docs as Code: se escribe en Markdown, se versiona con Git y se revisa mediante Pull Requests junto con el resto de los artefactos del proyecto. El repositorio completo, con su historial de cambios, issues y revisiones, puede consultarse en: https://github.com/Marigi84/TPI-Gestion-Desarrollos-Software
 
 La estructura propuesta es:
 
@@ -41,7 +41,10 @@ El proceso de solicitud se documenta como diagrama de flujo Mermaid en:
 
 `docs/diagramas/solicitud_certificado.md`
 
-Al mantenerse como texto plano, el diagrama puede versionarse y revisarse mediante Git y Pull Requests.
+Al mantenerse como texto plano, el diagrama puede versionarse y revisarse mediante Git y Pull Requests. Para el
+informe en PDF se exporta como imagen:
+
+![Diagrama del proceso de solicitud de certificado](img/proceso_solicitud.png)
 
 ## 9.4 Guía Rápida
 
